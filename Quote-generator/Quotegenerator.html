@@ -109,21 +109,46 @@
     </div>
 <script>
     const apiurl = "https://quote-garden.onrender.com/api/v3/quotes/random";
-    const quote = document.getElementById("quote")
-    const author = document.getElementById("author")
+    const quote = document.getElementById("quote");
+    const author = document.getElementById("author");
 
-    async function getQuote(url)
-    {
-        const response = await fetch(url)
-        var data = await response.json()
-        console.log(data)
-        quote.innerHTML = data.content
-        author.innerHTML = data.author
+    async function getQuote(url){
+        quote.textContent = "Loading...";
+        author.textContent = "Loading...";
+
+        try{
+            const response = await fetch(url);
+            if(!response.ok){
+                throw new Error("Quote API request failed");
+            }
+
+            const data = await response.json();
+            const item = Array.isArray(data.data) ? data.data[0] : data.data;
+
+            if(!item){
+                throw new Error("No quote returned");
+            }
+
+            quote.textContent = item.quoteText || item.content || "No quote available";
+            author.textContent = item.quoteAuthor || item.author || "Unknown";
+        }catch(error){
+            console.error("Quote generator error:", error);
+            quote.textContent = "Unable to load a quote right now.";
+            author.textContent = "Please try again.";
+        }
     }
-    getQuote(apiurl)
-    function tweet()
-    {
-        window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML + "---- by " + author.innerHTML,"Tweet Window","width=600","height=300")
+
+    getQuote(apiurl);
+
+    function tweet(){
+        const text = encodeURIComponent(
+            quote.textContent + " — by " + author.textContent
+        );
+        window.open(
+            "https://twitter.com/intent/tweet?text=" + text,
+            "Tweet Window",
+            "width=600,height=300"
+        );
     }
 </script>
 
