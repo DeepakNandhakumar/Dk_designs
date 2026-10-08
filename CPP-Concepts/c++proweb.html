@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>C++ programming</title>
+
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 3px;
+            background-color:cyan;
+            color: black;
+            text-align: center;
+            margin: 0;
+        }
+        nav {
+            background-color: cyan;
+            text-align: center;
+            padding: 10px;
+            color: black;
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size:larger;
+        }
+        nav form {
+            display: inline-block;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+        nav input[type="search"] {
+            background-color: white;
+            border: none;
+            padding: 5px;
+        }
+        nav input[type="submit"] {
+            background-color: cyan;
+            color: black;
+            border: none;
+            padding: 5px;
+        }
+        .left-column {
+            background-color: white;
+            width: 70%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .right-column {
+            background-color:beige ;
+            width: 30%;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            width: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-grow: 1;
+        }
+        footer {
+            padding: 3px 0;
+            background-color: lightblue;
+            color: black;
+            text-align: center;
+            margin-top: auto;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>C++ PROGRAMMING</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="c++proweb.html">Home</a></li>
+          <li><a href="c++io.html">Input/Output</a></li>
+          <li><a href="c++operator.html">Operators</a></li>
+          <li><a href="c++dm.html">Decision Making</a></li>
+          <li><a href="c++constr.html">Control Structure</a></li>
+          <li><a href="c++array.html">Arrays</a></li>
+          <li><a href="c++fun.html">Functions</a></li>
+          <li><a href="c++recursion.html">Recursion</a></li>
+          <li><a href="c++string.html">Strings</a></li>
+        </ul>
+
+        <form>
+          <input type="search" name="Search" placeholder="Search" />
+          <input type="submit" value="Search" />
+        </form>
+      </nav>
+      <main>
+        <div class="left-column">
+            <h2>C++ PROGRAMMING</h2>
+        
+            <h4>Introduction</h4>
+            <p>
+                C++ is the most used and most popular programming language developed by Bjarne Stroustrup. 
+                C++ is a high-level and object-oriented programming language. This language allows developers 
+                to write clean and efficient code for large applications and software development, game 
+                development, and operating system programming. It is an expansion of the C programming 
+                language to include Object Oriented Programming (OOPs) and is used to develop programs 
+                for computers. This C++ Tutorial will cover all the basic to advanced topics of C++ like 
+                C++ basics, C++ functions, C++ classes, OOPs and STL concepts.
+            </p>
+        
+            <h4>What is C++?</h4>
+            <p>
+                C++ is a popular cross-platform programming language used to create high-performance applications and software like OS, games, and e-commerce software. It was developed by Bjarne Stroustrup as an extension of the C language, providing a high level of control over system resources and memory.
+            </p>
+        
+            <h4>C++ Basics</h4>
+            <p>
+                C++ is a general-purpose, object-oriented programming language developed in 1979 by Bjarne Stroustrup at AT&T Bell Laboratories. It is a high-level programming language and an advanced version of C. Compared to other programming languages like Java and Python, C++ is known for its speed.
+            </p>
+        
+            <h4>Syntax</h4>
+            <p>
+                Syntax refers to the rules and regulations for writing statements in a programming language. These rules define the structure of a programming language. C++ has specific syntax rules that must be followed for writing different statements.
+            </p>
+            <p>
+                Example of C++ syntax:
+            </p>
+            <pre>
+                <code>
+                    #include &lt;iostream&gt;
+                    using namespace std;
+        
+                    int main() {
+                        cout << "Hello, World!" << endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+        
+            <h4>C++ Data Types</h4>
+            <p>
+                All variables use a data type during declaration to restrict the type of data they can store. Data types specify the size and type of values to be stored. C++ supports a wide variety of data types, which can be classified into three main categories:
+            </p>
+            <ul>
+                <li>Primitive Data Types</li>
+                <li>Derived Data Types</li>
+                <li>User-defined Data Types</li>
+            </ul>
+            <h4>Primitive Data Types</h4>
+    <ul>
+        <li>
+            <strong>Integer (int):</strong> Requires 4 bytes of memory, ranges from -2147483648 to 2147483647.
+        </li>
+        <li>
+            <strong>Character (char):</strong> Requires 1 byte of memory, ranges from -128 to 127 or 0 to 255.
+        </li>
+        <li>
+            <strong>Boolean (bool):</strong> Stores logical values (true or false).
+        </li>
+        <li>
+            <strong>Floating Point (float):</strong> Requires 4 bytes of memory for single-precision decimal values.
+        </li>
+        <li>
+            <strong>Double Floating Point (double):</strong> Requires 8 bytes of memory for double-precision decimal values.
+        </li>
+        <li>
+            <strong>Void:</strong> Represents a valueless entity, used for functions that do not return a value.
+        </li>
+        <li>
+            <strong>Wide Character (wchar_t):</strong> Used for larger character sets, typically 2 or 4 bytes long.
+        </li>
+    </ul>
+
+    <h4>C++ Variables</h4>
+    <p>
+        Variables in C++ are names given to memory locations. They are the basic units of storage in a program. The value stored in a variable can be changed during program execution. All operations done on a variable affect that memory location. In C++, all variables must be declared before use.
+    </p>
+    <h4>How to Declare Variables?</h4>
+    <p>A typical variable declaration is of the form:</p>
+    <pre>
+        <code>
+            // Declaring a single variable
+            type variable_name;
+
+            // Declaring multiple variables
+            type variable1_name, variable2_name, variable3_name;
+        </code>
+    </pre>
+        </div>
+        
+        <div class="right-column">
+          <h2>C++ PROGRAMMING</h2>
+          <h4>TABLE OF CONTENT</h4>
+          <ol>
+            <li>Introduction</li>
+            <li>C++ Basics</li>
+            <li>Datatypes</li>
+            <li>Input/Output</li>
+            <li>Operators</li>
+            <ul>
+              <li>Arithmetic Operator</li>
+              <li>Relational Operator</li>
+              <li>Logical Operator</li>
+              <li>Bitwise Operator</li>
+              <li>Assignment Operator</li>
+              <li>Ternary or Conditional Operator</li>
+            </ul>
+            <li>Decision Making</li>
+            <ul>
+              <li>if Statement</li>
+              <li>if-else Statement</li>
+              <li>Nested if Statement</li>
+              <li>if-else-if Ladder Statement</li>
+              <li>Switch Statement</li>
+              <li>Jump Statement</li>
+              <ol>
+                <li>break</li>
+                <li>continue</li>
+                <li>goto</li>
+                <li>return</li>
+              </ol>
+            </ul>
+            <li>Control Structure</li>
+            <ul>
+              <li>for loop</li>
+              <li>while loop</li>
+              <li>do-while loop</li>
+            </ul>
+            <li>Arrays</li>
+            <li>Functions</li>
+            <li>Recursion</li>
+            <li>Strings</li>
+          </ol>
+        </div>
+      </main>
+      <footer>
+        <p>©Copyright 2050 by C++ programming. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

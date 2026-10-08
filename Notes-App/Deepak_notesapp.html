@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            background-color: #88ABFF; /* Blue background for the whole page */
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .wrapper {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+        .note-box, .add-box {
+            background: #fff; /* White background for note boxes */
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.1s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .note-box:hover, .add-box:hover {
+            transform: translateY(-0.5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .add-box {
+            cursor: pointer;
+            border: 2px dashed #88ABFF;
+            color: #88ABFF;
+        }
+        .add-box .icon {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            border: 2px dashed #88ABFF;
+            font-size: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .add-box p {
+            margin-top: 15px;
+            font-size: 24px;
+        }
+        .note {
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            background: #fff; /* White background for notes */
+            color: #333; /* Darker text color for better readability */
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .note .details {
+            flex: 1;
+        }
+        .note p {
+            font-size: 22px;
+            font-weight: 700; /* Bold title */
+            margin: 0;
+            color: #333; /* Darker color for title */
+        }
+        .note span {
+            display: block;
+            margin-top: 10px;
+            color: #666; /* Slightly lighter color for description */
+            font-size: 16px;
+        }
+        .bottom-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            border-top: 1px solid #ddd; /* Light gray border for consistency */
+            margin-top: 10px;
+        }
+        .bottom-content span {
+            color: #999; /* Light color for the date */
+            font-size: 14px;
+        }
+        .bottom-content .setting {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+        .bottom-content .setting i {
+            color: #666;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .setting ul.menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        .setting ul.menu li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .setting ul.menu li:hover {
+            background: #f0f0f0;
+        }
+        .add-note-form {
+            display: none;
+            flex-direction: column;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .add-note-form input,
+        .add-note-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .add-note-form button {
+            background-color: #88ABFF;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .add-note-form button:hover {
+            background-color: #5a7ed9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <!-- Add new note box (initially visible) -->
+            <div class="add-box" id="addBox" onclick="toggleForm()">
+                <div class="icon"><i class="uil uil-plus"></i></div>
+                <p>Add new note</p>
+            </div>
+            <!-- Form to add/edit notes (initially hidden) -->
+            <div class="add-note-form" id="addNoteForm">
+                <input type="text" id="noteTitle" placeholder="Title" />
+                <textarea id="noteDescription" placeholder="Description"></textarea>
+                <button onclick="saveNote()">Save Note</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        let currentEditNote = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load notes from local storage
+            loadNotes();
+        });
+
+        function toggleForm() {
+            const form = document.getElementById('addNoteForm');
+            const addBox = document.getElementById('addBox');
+            form.style.display = form.style.display === 'none' || form.style.display === '' ? 'flex' : 'none';
+            addBox.style.display = form.style.display === 'flex' ? 'none' : 'flex'; // Hide add-box when form is visible
+            if (currentEditNote) {
+                // Clear the edit note reference if form is toggled
+                currentEditNote = null;
+            }
+        }
+
+        function saveNote() {
+            const title = document.getElementById('noteTitle').value;
+            const description = document.getElementById('noteDescription').value;
+            if (title && description) {
+                if (currentEditNote) {
+                    // Update existing note
+                    currentEditNote.querySelector('.details p').textContent = title;
+                    currentEditNote.querySelector('.details span').textContent = description;
+                    currentEditNote = null;
+                } else {
+                    // Add new note
+                    const wrapper = document.querySelector('.wrapper');
+                    const newNote = document.createElement('div');
+                    newNote.className = 'note';
+                    newNote.dataset.id = Date.now(); // Unique ID based on timestamp
+                    newNote.innerHTML = `
+                        <div class="details">
+                            <p>${title}</p>
+                            <span>${description}</span>
+                        </div>
+                        <div class="bottom-content">
+                            <span>${new Date().toLocaleDateString()}</span>
+                            <div class="setting">
+                                <i class="uil uil-ellipsis-h" onclick="toggleMenu(this)"></i>
+                                <ul class="menu">
+                                    <li onclick="editNote.call(this, event)">Edit</li>
+                                    <li onclick="deleteNote.call(this, event)">Delete</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    wrapper.appendChild(newNote);
+                    saveNotes();
+                }
+                document.getElementById('noteTitle').value = '';
+                document.getElementById('noteDescription').value = '';
+                toggleForm();
+            }
+        }
+
+        function toggleMenu(element) {
+            const menu = element.nextElementSibling;
+            menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+        }
+
+        function editNote(event) {
+            const note = event.target.closest('.note');
+            const title = note.querySelector('.details p').textContent;
+            const description = note.querySelector('.details span').textContent;
+
+            // Fill the form with current note's data for editing
+            document.getElementById('noteTitle').value = title;
+            document.getElementById('noteDescription').value = description;
+            toggleForm();
+
+            // Set the current note for editing
+            currentEditNote = note;
+        }
+
+        function deleteNote(event) {
+            if (confirm('Are you sure you want to delete this note?')) {
+                const note = event.target.closest('.note');
+                note.remove();
+                saveNotes();
+            }
+        }
+
+        function saveNotes() {
+            const notes = Array.from(document.querySelectorAll('.note')).map(note => ({
+                id: note.dataset.id,
+                title: note.querySelector('.details p').textContent,
+                description: note.querySelector('.details span').textContent,
+                date: note.querySelector('.bottom-content span').textContent
+            }));
+            localStorage.setItem('notes', JSON.stringify(notes));
+        }
+
+        function loadNotes() {
+            const notes = JSON.parse(localStorage.getItem('notes') || '[]');
+            const wrapper = document.querySelector('.wrapper');
+            notes.forEach(note => {
+                const newNote = document.createElement('div');
+                newNote.className = 'note';
+                newNote.dataset.id = note.id;
+                newNote.innerHTML = `
+                    <div class="details">
+                        <p>${note.title}</p>
+                        <span>${note.description}</span>
+                    </div>
+                    <div class="bottom-content">
+                        <span>${note.date}</span>
+                        <div class="setting">
+                            <i class="uil uil-ellipsis-h" onclick="toggleMenu(this)"></i>
+                            <ul class="menu">
+                                <li onclick="editNote.call(this, event)">Edit</li>
+                                <li onclick="deleteNote.call(this, event)">Delete</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                wrapper.appendChild(newNote);
+            });
+        }
+    </script>
+</body>
+</html>

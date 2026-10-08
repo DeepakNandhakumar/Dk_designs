@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #d20000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .converter {
+            text-align: center;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #c70000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #convertTo {
+            text-transform: uppercase;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .information h2 {
+            margin-top: 0;
+        }
+
+        .information ul {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Temperature Converter</h1>
+    </header>
+
+    <main>
+        <div class="information">
+            <h2>Temperature Conversion</h2>
+            <p>Temperature can be converted between different units using formulas. The most common conversions are between Celsius (°C) and Fahrenheit (°F).</p>
+            <h3>Formulas</h3>
+            <ul>
+                <li><strong>Celsius to Fahrenheit:</strong> (°C × 9/5) + 32 = °F</li>
+                <li><strong>Fahrenheit to Celsius:</strong> (°F - 32) × 5/9 = °C</li>
+            </ul>
+            <h3>Differences</h3>
+            <p>Celsius and Fahrenheit are two different scales for measuring temperature. Here are some key differences:</p>
+            <ul>
+                <li>The Celsius scale is used in most of the world and is based on the freezing and boiling points of water (0°C and 100°C, respectively).</li>
+                <li>The Fahrenheit scale is primarily used in the United States and its territories and is based on a different set of reference points (32°F for the freezing point of water and 212°F for the boiling point).</li>
+            </ul>
+        </div>
+        <div class="converter">
+            <input type="text" id="temperature" name="temperature" placeholder="Enter Temperature">
+            <input type="text" id="convertTo" name="convertTo" placeholder="Convert to (F/C)">
+            <button onclick="convertTemperature()">Convert</button>
+            <p id="result"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Temperature Converter</p>
+    </footer>
+
+    <script>
+        function convertTemperature() {
+            const temperature = document.getElementById('temperature').value;
+            const convertTo = document.getElementById('convertTo').value.toUpperCase();
+            let result;
+
+            
+            switch (convertTo) {
+                case 'F':
+                    result = (temperature * 9/5) + 32;
+                    document.getElementById('result').innerText = `${temperature}°C is equal to ${result.toFixed(2)}°F`;
+                    break;
+                case 'C':
+                    result = (temperature - 32) * 5/9;
+                    document.getElementById('result').innerText = `${temperature}°F is equal to ${result.toFixed(2)}°C`;
+                    break;
+                default:
+                    document.getElementById('result').innerText = 'Please enter "F" for Fahrenheit or "C" for Celsius.';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

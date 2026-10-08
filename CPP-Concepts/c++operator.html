@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>C++ programming</title>
+    <style>
+      body {
+          background-color: white;
+          margin: 0;
+          padding: 0;
+      }
+      header {
+          padding: 3px;
+          background-color:cyan;
+          color: black;
+          text-align: center;
+          margin: 0;
+      }
+      nav {
+          background-color: cyan;
+          text-align: center;
+          padding: 10px;
+          color: black;
+          margin: 0;
+      }
+      nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          padding: 0;
+          margin: 0;
+      }
+      nav ul li {
+          margin: 0 15px;
+      }
+      nav ul li a {
+          text-decoration: none;
+          color: black;
+          font-size:larger;
+      }
+      nav form {
+          display: inline-block;
+          margin-left: 15px;
+          margin-top: 10px;
+      }
+      nav input[type="search"] {
+          background-color: white;
+          border: none;
+          padding: 5px;
+      }
+      nav input[type="submit"] {
+          background-color: cyan;
+          color: black;
+          border: none;
+          padding: 5px;
+      }
+      .left-column {
+          background-color: white;
+          width: 70%;
+          box-sizing: border-box;
+          padding: 10px;
+      }
+      .right-column {
+          background-color:beige ;
+          width: 30%;
+          box-sizing: border-box;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+      }
+      main {
+          width: 100%;
+          display: flex;
+          margin: 0;
+          padding: 0;
+          flex-grow: 1;
+      }
+      footer {
+          padding: 10px 0;
+          background-color: lightblue;
+          color: black;
+          text-align: center;
+          margin-top: auto;
+      }
+      .container {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>C++ PROGRAMMING</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="c++proweb.html">Home</a></li>
+          <li><a href="c++io.html">Input/Output</a></li>
+          <li><a href="c++operator.html">Operators</a></li>
+          <li><a href="c++dm.html">Decision Making</a></li>
+          <li><a href="c++constr.html">Control Structure</a></li>
+          <li><a href="c++array.html">Arrays</a></li>
+          <li><a href="c++fun.html">Functions</a></li>
+          <li><a href="c++recursion.html">Recursion</a></li>
+          <li><a href="c++string.html">Strings</a></li>
+        </ul>
+
+        <form>
+          <input type="search" name="Search" placeholder="Search" />
+          <input type="submit" value="Search" />
+        </form>
+      </nav>
+      <main>
+        <div class="left-column">
+          <h2>C++ PROGRAMMING</h2>
+          <h4>Operators</h4>
+        
+          <p>In C++, operators are symbols that manipulate the value of operands. They can perform various operations such as arithmetic, logical, relational, bitwise, etc. C++ supports a wide range of operators, which are categorized into several types:</p>
+          
+          <h4>Arithmetic Operators</h4>
+          <p>Arithmetic operators perform basic arithmetic operations like addition, subtraction, multiplication, division, and modulus.</p>
+          <pre><code>
+            +   // Addition
+            -   // Subtraction
+            *   // Multiplication
+            /   // Division
+            %   // Modulus (remainder)
+          </code></pre>
+        
+          <h4>Relational Operators</h4>
+          <p>Relational operators compare two values and return true (1) or false (0) based on the comparison.</p>
+          <pre><code>
+            ==  // Equal to
+            !=  // Not equal to
+            >   // Greater than
+            <   // Less than
+            >=  // Greater than or equal to
+            <=  // Less than or equal to
+          </code></pre>
+        
+          <h4 id="lo">Logical Operators</h4>
+          <p>Logical operators perform logical AND, OR, and NOT operations.</p>
+          <pre><code>
+            &&  // Logical AND
+            ||  // Logical OR
+            !   // Logical NOT
+          </code></pre>
+        
+          <h4>Bitwise Operators</h4>
+          <p>Bitwise operators manipulate bits of data at the binary level.</p>
+          <pre><code>
+            &   // Bitwise AND
+            |   // Bitwise OR
+            ^   // Bitwise XOR (exclusive OR)
+            ~   // Bitwise NOT (one's complement)
+            <<  // Left shift
+            >>  // Right shift
+          </code></pre>
+        
+          <h4>Assignment Operators</h4>
+          <p>Assignment operators are used to assign values to variables.</p>
+          <pre><code>
+            =   // Simple assignment
+            +=  // Addition assignment
+            -=  // Subtraction assignment
+            *=  // Multiplication assignment
+            /=  // Division assignment
+            %=  // Modulus assignment
+            &=  // Bitwise AND assignment
+            |=  // Bitwise OR assignment
+            ^=  // Bitwise XOR assignment
+            <<=  // Left shift assignment
+            >>=  // Right shift assignment
+          </code></pre>
+        
+          <h4>Other Operators</h4>
+          <p>C++ also supports other operators such as conditional (ternary) operator <code>?:</code>, comma operator <code>,</code>, pointer operators <code>*</code> and <code>&</code>, member access operators <code>.</code> and <code>-></code>, etc.</p>
+        
+          <h4>Summary</h4>
+          <p>Operators in C++ are fundamental for performing various computations and operations. Understanding different types of operators and their usage is crucial for writing efficient and expressive C++ code.</p>
+        </div>
+
+        <div class="right-column">
+          <h2>C++ PROGRAMMING</h2>
+          <h4>TABLE OF CONTENT</h4>
+          <ol>
+            <li>Introduction</li>
+            <li>C++ Basics</li>
+            <li>Datatypes</li>
+            <li>Input/Output</li>
+            <li>Operators</li>
+            <ul>
+              <li>Arithmetic Operator</li>
+              <li>Relational Operator</li>
+              <li>Logical Operator</li>
+              <li>Bitwise Operator</li>
+              <li>Assignment Operator</li>
+              <li>Ternary or Conditional Operator</li>
+            </ul>
+            <li>Decision Making</li>
+            <ul>
+              <li>if Statement</li>
+              <li>if-else Statement</li>
+              <li>Nested if Statement</li>
+              <li>if-else-if Ladder Statement</li>
+              <li>Switch Statement</li>
+              <li>Jump Statement</li>
+              <ol>
+                <li>break</li>
+                <li>continue</li>
+                <li>goto</li>
+                <li>return</li>
+              </ol>
+            </ul>
+            <li>Control Structure</li>
+            <ul>
+              <li>for loop</li>
+              <li>while loop</li>
+              <li>do-while loop</li>
+            </ul>
+            <li>Arrays</li>
+            <li>Functions</li>
+            <li>Recursion</li>
+            <li>Strings</li>
+          </ol>
+        </div>
+      </main>
+      <footer>
+        <p>©Copyright 2050 by C++ programming. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

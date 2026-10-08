@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+    <style>
+        
+        .container img {
+            width: 40px; 
+            height: 40px;
+            cursor: pointer;
+            justify-content: right;
+        }
+        :root{
+            --primary-color:#212121;
+            --secondary-color:rgb(248, 247, 239);
+        }
+        .dark-theme{
+            --primary-color:rgb(248, 247, 239);
+            --secondary-color:#212121;
+        }
+        button{
+            border:none;
+            outline:none;
+            background-color: var(--seconday-color);
+        }
+        body{
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button><img src="moon.png" id="icon" alt="Moon Icon"></button>
+    </div>
+
+    <script>
+        var icon = document.getElementById("icon")
+        icon.onclick=function(){
+            document.body.classList.toggle("dark-theme")
+            if(document.body.classList.contains("dark-theme"))
+            {
+                icon.src = "sun.png"
+            }
+            else{
+                icon.src = "moon.png"
+            }
+        }
+        
+    </script>
+</body>
+</html>

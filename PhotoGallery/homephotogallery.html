@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100vh;
+            color: white;
+        }
+
+        header {
+            background: linear-gradient(to right, rgb(88, 49, 107), rgb(255, 82, 229));
+            color: white;
+            padding: 5px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer {
+            background: linear-gradient(to right, rgb(255, 82, 229),rgb(88, 49, 107) );
+            color: white;
+            padding: 3px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+           
+        }
+
+        main {
+            padding: 10px;
+        }
+
+        .albums {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .album {
+            text-align: center;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .album img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .album a {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit color from parent */
+        }
+
+        .album a:hover {
+            text-decoration: none; /* Remove underline on hover */
+            color: inherit; /* Inherit color on hover */
+        }
+
+
+        .album p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .album:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Photo Gallery</h1>
+    </header>
+
+    <main>
+        <section class="albums">
+            <div class="album">
+                <a href="naruto.html">
+                    <img src="https://media.licdn.com/dms/image/C4E12AQE_qTA-Aalpqw/article-inline_image-shrink_1500_2232/0/1591530215654?e=1725494400&v=beta&t=HjThfvM8zxHldFo0uN3YXPwqB4zFzwjqx8cKB9K5ffs" alt="Flowers">
+                    <p>Naruto characters</p>
+                </a>
+            </div>
+            <div class="album">
+                <a href="sweets.html">
+                    <img src="https://as2.ftcdn.net/v2/jpg/02/66/63/07/1000_F_266630771_iMmYbU4j5APHpgCcOai68Gz9HWyYMXlu.jpg" alt="Nature">
+                    <p>Traditional sweets</p>
+                </a>
+            </div>
+            <div class="album">
+                <a href="cholate.html">
+                    <img src="https://www.allrecipes.com/thmb/-uvkPKKLtyDJJMIb3IPA1Ur9Bxk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/dj22-chocolate-photo-by-brie-passano-5d540c39ace443dc9ab9b97b98a03ea8.jpg" alt="Cities">
+                    <p>Chocolate</p>
+                </a>
+            </div>
+            <div class="album">
+                <a href="cartoon.html">
+                    <img src="https://miro.medium.com/v2/resize:fit:1000/1*ifyp0oIdtwqOE38whYkkiA.jpeg" alt="Cities">
+                    <p>Favorite Cartoons</p>
+                </a>
+            </div>
+            <div class="album">
+                <a href="games.html">
+                    <img src="https://static-ai.asianetnews.com/images/31f779fd-737d-486a-81d4-a93502fa6634/image_710x400xt.jpg" alt="Cities">
+                    <p>90's games</p>
+                </a>
+            </div>
+            <div class="album">
+                <a href="temple.html">
+                    <img src="https://www.tourmyindia.com/blog/wp-content/uploads/2024/02/Must-Visit-Temples-in-South-India.jpg" alt="Cities">
+                    <p>Temples</p>
+                </a>
+            </div>
+            <div class="album">
+                <a href="place.html">
+                    <img src="https://www.tripsavvy.com/thmb/MSDRkfQs9idX96pkY-iPvbfsHR0=/3008x2000/filters:no_upscale():max_bytes(150000):strip_icc()/houseboats_in_kottayam_2_438-56a3be175f9b58b7d0d39246.jpg" alt="Cities">
+                    <p>Favorite places</p>
+                </a>
+            </div>
+            <div class="album">
+                <a href="movie.html">
+                    <img src="https://wallpapercave.com/wp/wp7385787.jpg" alt="Cities">
+                    <p>Favorite Movies</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Photo Gallery. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, rgb(115, 1, 66), rgb(10, 4, 182));
+            margin: 0;
+        }
+
+        .stopwatch {
+            background: #f7f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(250, 178, 178, 0.1);
+            text-align: center;
+            height: 280px;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+        }
+
+        h1 {
+            margin-bottom: 35px;
+            font-size: 40px;
+        }
+
+        #display {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .buttons button {
+            font-size: 20px;
+            padding: 15px 25px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background-color: #ddd;
+        }
+
+        .buttons button:disabled {
+            background-color: #eee;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="stopwatch">
+        <h1>Stopwatch</h1>
+        <div id="display">00:00:00.00</div>
+        <div class="buttons">
+            <button id="startBtn" onclick="startTimer()">Start</button>
+            <button id="stopBtn" onclick="stopTimer()" disabled>Stop</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+    <script>
+        let startTime;          // Time when the stopwatch started
+        let elapsedTime = 0;    // Time elapsed since the stopwatch started
+        let timerInterval;      // Interval to update the display
+
+        const display = document.getElementById('display');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+
+        function startTimer() {
+            startTime = Date.now() - elapsedTime;  // Set start time
+            timerInterval = setInterval(updateDisplay, 10);  // Update display every 10ms
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);  // Stop updating the display
+            elapsedTime = Date.now() - startTime;  // Update elapsed time
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);  // Stop updating the display
+            display.textContent = '00:00:00.00';  // Reset display
+            elapsedTime = 0;  // Reset elapsed time
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+        }
+
+        function updateDisplay() {
+            elapsedTime = Date.now() - startTime;  // Update elapsed time
+
+            const hours = Math.floor(elapsedTime / (1000 * 60 * 60));  // Calculate hours
+            const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));  // Calculate minutes
+            const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);  // Calculate seconds
+            const milliseconds = Math.floor((elapsedTime % 1000) / 10);  // Calculate milliseconds
+
+            display.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}.${pad(milliseconds, 2)}`;
+        }
+
+        function pad(number, digits = 2) {
+            return String(number).padStart(digits, '0');  // Pad numbers with leading zeros
+        }
+    </script>
+</body>
+</html>

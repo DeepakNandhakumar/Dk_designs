@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My page title</title>
+    <style>
+    
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One');
+
+      
+      body, h1, h2, h3, p, ul, li, form, input {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+     
+      body {
+          font-family: 'Open Sans Condensed', sans-serif;
+          line-height: 1.6;
+          background: #eceaea;
+          color: black;
+          padding: 20px;
+      }
+
+      header {
+          background: black;
+          color: white;
+          padding: 10px 0;
+          text-align: center;
+          font-family: 'Sonsie One', cursive;
+      }
+
+      nav {
+          background:black;
+          padding: 10px;
+      }
+
+      nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+      }
+
+      nav ul li {
+          margin: 0 15px;/* top & bottom: 0, left & right: 15px */
+      }
+
+      nav ul li a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+      }
+
+      nav form {
+          margin-top: 10px;
+          text-align: center;
+      }
+
+      nav input[type="search"] {
+          padding: 5px;
+          width: 200px;
+      }
+
+      nav input[type="submit"] {
+          padding: 5px 10px;
+          background: black;
+          color: white;
+          border: none;
+          cursor: pointer;
+      }
+
+      nav input[type="submit"]:hover {
+          background: black;
+      }
+
+      main {
+          display: flex;
+          margin-top: 20px;
+      }
+
+      article {
+          flex: 3;
+          background: white;
+          padding: 20px;
+          margin-right: 20px;
+      }
+
+      article h2, article h3 {
+          font-family: 'Sonsie One', cursive;
+          color: black;
+          margin-bottom: 10px;
+      }
+
+      article p {
+          margin-bottom: 20px;
+      }
+
+      aside {
+          flex: 1;
+          background: white;
+          padding: 20px;
+      }
+
+      aside h2 {
+          font-family: 'Sonsie One', cursive;
+          color: black;
+          margin-bottom: 10px;
+      }
+
+      aside ul {
+          list-style: none;
+      }
+
+      aside ul li {
+          margin-bottom: 10px;
+      }
+
+      aside ul li a {
+          color: black;
+          text-decoration: none;
+      }
+
+      aside ul li a:hover {
+          text-decoration: underline;
+      }
+
+      footer {
+          background: black;
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+          margin-top: 20px;
+          font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      <h1>Header</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="link">Home</a></li>
+        <li><a href="link">Our team</a></li>
+        <li><a href="link">Projects</a></li>
+        <li><a href="link">Contact</a></li>
+      </ul>
+
+      
+      <form>
+        <input type="search" name="q" placeholder="Search query" />
+        <input type="submit" value="Go!" />
+      </form>
+    </nav>
+
+    
+    <main>
+      <article>
+        <h2>Article heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.
+        </p>
+
+        <h3>Subsection</h3>
+        <p>
+          Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
+        </p>
+
+        <p>
+          Pelientesque auctor nisi id magna consequat sagittis. Curabitur dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.
+        </p>
+
+        <h3>Another subsection</h3>
+        <p>
+          Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+        </p>
+
+        <p>
+          Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.
+        </p>
+      </article>
+      <aside>
+        <h2>Related</h2>
+        <ul>
+          <li><a href="#">Oh I do like to be beside the seaside</a></li>
+          <li><a href="#">Oh I do like to be beside the sea</a></li>
+          <li><a href="#">Although in the North of England</a></li>
+          <li><a href="#">It never stops raining</a></li>
+          <li><a href="#">Oh well…</a></li>
+        </ul>
+      </aside>
+    </main>
+    <footer>
+      <p>©Copyright 2050 by nobody. All rights reversed.</p>
+    </footer>
+  </body>
+</html>

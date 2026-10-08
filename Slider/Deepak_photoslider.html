@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            background: linear-gradient(135deg, rgb(114, 1, 99), rgba(2, 12, 121, 0.856));
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .imageslider {
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .slide {
+            display: none;
+            text-align: center;
+        }
+        
+        .slide img {
+            max-width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+        
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 24px;
+            border-radius: 50%;
+            user-select: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .prev {
+            left: 20px;
+        }
+        
+        .next {
+            right: 20px;
+        }
+        
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Image Slider</h1>
+    </header>
+    <div class="imageslider">
+        <div class="slide">
+            <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-16886,resizemode-75,msid-102702886/news/international/us/starting-naruto-check-where-to-begin-how-to-watch-heres-your-complete-guide-to-iconic-ninja-series.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="https://i.pinimg.com/564x/9e/ad/59/9ead59f5f284f88c6439c11fcb328904.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <img src="https://e0.pxfuel.com/wallpapers/659/367/desktop-wallpaper-gaara-naruto-gaara-naruto-anime.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+            <img src="https://images.saymedia-content.com/.image/t_share/MTc2MjcwNTUxMTIzMDQzNTAx/naruto-character-review-orochimaru.jpg" alt="Image 4">
+        </div>
+        <div class="slide">
+            <img src="https://imgix.ranker.com/list_img_v2/1377/2681377/original/best-sasuke-uchiha-quotes?fit=crop&fm=pjpg&q=80&dpr=2&w=1200&h=720" alt="Image 5">
+        </div>
+        <div class="slide">
+            <img src="https://external-preview.redd.it/fsgF9NN7ilq0b76xbOXVRhk6yV3JZdeL8N0tRvuJ7Wk.jpg?auto=webp&s=c862750f0c0fe05c6d93b4f17a5939714a2379bd" alt="Image 6">
+        </div>
+        <div class="slide">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5ms4rJpl2OQWJf63Yr56IpXSvRwn6O5Wh31PZtT3oXK6izKKAHu0zeuFaMhsqp_zXqDLl9fYqsQCvKtfSMlHklniwKkbLsrYsmOH3Cl-0ybN1ix08rid81Lb5kjJ2-ivdTcCf/s1600/R2.jpg" alt="Image 7">
+        </div>
+        <div class="slide">
+            <img src="https://popcornsg.s3.amazonaws.com/movies/650/1164-61180-Vinnaithjpg" alt="Image 8">
+        </div>
+        <div class="slide">
+            <img src="https://m.media-amazon.com/images/M/MV5BZTViZTUxNzQtNzMxMi00NWY2LTkxZDctNGE5NzcxN2M5M2M2XkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_FMjpg_UX1000_.jpg" alt="Image 9">
+        </div>
+        <div class="slide">
+            <img src="https://moviegalleri.net/wp-content/gallery/3-tamil-movie-stills/dhanush_3_movie_new_stills_shruti_hassan_2636.jpg" alt="Image 10">
+        </div>
+        <div class="slide">
+            <img src="https://m.media-amazon.com/images/M/MV5BOTYxOWU3OWYtOGM4NC00NDhlLTlmZTYtMGUxM2YwZmFhOGFlXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg" alt="Image 11">
+        </div>
+    </div>
+    <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+    <div class="next" onclick="plusSlides(1)">&#10095;</div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slide");
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { 
+                slideIndex = 1;
+            }    
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 8000); // Change slide every 8 seconds
+        }
+
+        function plusSlides(n) {
+            slideIndex += n;
+            if (slideIndex < 1) {
+                slideIndex = slides.length;
+            } else if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            showSlidesManual(slideIndex);
+        }
+
+        function showSlidesManual(n) {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[n - 1].style.display = "block";  
+        }
+
+        showSlides();
+    </script>
+</body>
+</html>

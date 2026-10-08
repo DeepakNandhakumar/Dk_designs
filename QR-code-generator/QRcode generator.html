@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QR Code Generator</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins', sans-serif;
+                box-sizing: border-box;
+                background: linear-gradient(135deg, rgb(101, 15, 15), rgba(3, 8, 110, 0.856));
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                width: 400px;
+                padding: 25px 35px;
+                background-color: white;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .container p {
+                font-weight: 600;
+                font-size: 15px;
+                margin-bottom: 8px;
+            }
+            .container input {
+                width: 100%;
+                height: 30px;
+                border: 2.5px solid rgb(61, 45, 179);
+                outline: none;
+                padding: 10px;
+                margin: 10px 0 20px;
+                border-radius: 5px;
+            }
+            .container button {
+                width: 100%;
+                height: 35px;
+                background-color: rgb(61, 45, 179);
+                outline: none;
+                border: none;
+                color: white;
+                border-radius: 10px;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.307);
+                cursor: pointer;
+                margin-top: 20px;
+                font-weight: 500;
+            }
+            .container button:hover {
+                background-color: rgb(105, 105, 202);
+                color: white;
+            }
+            .imgbox {
+                width: 200px;
+                border-radius: 40px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 1s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+            }
+            .imgbox img {
+                width: 100%;
+                padding: 20px 25px;
+            }
+            .imgbox.show-img {
+                max-height: 400px;
+                margin: 5px;
+                border: 1.5px solid rgb(203, 199, 199);
+                justify-content: center;
+                align-items: center;
+            }
+            .error {
+                animation: shake 0.2s linear 4;
+            }
+            @keyframes shake {
+                0% { transform: translateX(0); }
+                25% { transform: translateX(-2px); }
+                50% { transform: translateX(0); }
+                75% { transform: translateX(2px); }
+                100% { transform: translateX(0); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <p>Enter your text or URL</p>
+            <input type="text" placeholder="Text or URL" id="qrtext">
+            <div class="imgbox" id="imgb">
+                <img src="" id="qrimg">
+            </div>
+            <button onclick="gen()">Generate QR Code</button>
+        </div>
+        <script>
+            let qrt = document.getElementById("qrtext");
+            let qi = document.getElementById("qrimg");
+            let ib = document.getElementById("imgb");
+            
+            function gen() {
+                if (qrt.value.length > 0) {
+                    qi.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrt.value;
+                    ib.classList.add("show-img");
+                } else {
+                    qrt.classList.add("error");
+                    setTimeout(() => {
+                        qrt.classList.remove('error');
+                    }, 300);
+                }
+            }
+        </script>
+    </body>
+</html>

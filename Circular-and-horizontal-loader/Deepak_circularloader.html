@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circular Loader</title>
+<style>
+  body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+  }
+
+  .loader-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .loader {
+      border: 8px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-top: 8px solid #04578f; 
+      width: 100px;
+      height: 100px;
+      position: relative;
+  }
+
+  .percentage-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+  }
+
+  .percentage {
+      font-size: 1.2em;
+      color: #04578f;
+  }
+
+  @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+  <div class="loader-container">
+      <div class="loader" id="loader"></div>
+      <div class="percentage-container">
+          <div class="percentage" id="percentage">0%</div>
+      </div>
+  </div>
+
+  <script>
+      let percentageElement = document.getElementById('percentage');
+      let loaderElement = document.getElementById('loader');
+      let percentage = 0;
+
+      function updatePercentage() {
+          if (percentage <= 100) {
+              percentageElement.textContent = percentage + '%';
+              percentage++;
+              loaderElement.style.transform = `rotate(${(percentage / 100) * 360}deg)`;
+          } else {
+              clearInterval(interval);
+          }
+      }
+
+      let interval = setInterval(updatePercentage, 30);
+  </script>
+</body>
+</html>

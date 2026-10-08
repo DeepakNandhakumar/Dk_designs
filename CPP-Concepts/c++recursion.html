@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>C++ programming</title>
+
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 3px;
+            background-color:cyan;
+            color: black;
+            text-align: center;
+            margin: 0;
+        }
+        nav {
+            background-color: cyan;
+            text-align: center;
+            padding: 10px;
+            color: black;
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size:larger;
+        }
+        nav form {
+            display: inline-block;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+        nav input[type="search"] {
+            background-color: white;
+            border: none;
+            padding: 5px;
+        }
+        nav input[type="submit"] {
+            background-color: cyan;
+            color: black;
+            border: none;
+            padding: 5px;
+        }
+        .left-column {
+            background-color: white;
+            width: 70%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .right-column {
+            background-color:beige ;
+            width: 30%;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            width: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-grow: 1;
+        }
+        footer {
+            padding: 10px 0;
+            background-color: lightblue;
+            color: black;
+            text-align: center;
+            margin-top: auto;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>C++ PROGRAMMING</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="c++proweb.html">Home</a></li>
+          <li><a href="c++io.html">Input/Output</a></li>
+          <li><a href="c++operator.html">Operators</a></li>
+          <li><a href="c++dm.html">Decision Making</a></li>
+          <li><a href="c++constr.html">Control Structure</a></li>
+          <li><a href="c++array.html">Arrays</a></li>
+          <li><a href="c++fun.html">Functions</a></li>
+          <li><a href="c++recursion.html">Recursion</a></li>
+          <li><a href="c++string.html">Strings</a></li>
+        </ul>
+
+        <form>
+          <input type="search" name="Search" placeholder="Search" />
+          <input type="submit" value="Search" />
+        </form>
+      </nav>
+      <main>
+        <div class="left-column">
+          <h2>C++ PROGRAMMING</h2>
+  
+        
+        <h4>Recursion</h4>
+        <p>Functions are a fundamental building block in C++ programming that allow you to break down complex problems into smaller, manageable tasks. They enable code reusability and better organization.</p>
+        
+        <h4>Function Declaration and Definition</h4>
+        <p>A function must be declared before it is used in a program. A function declaration tells the compiler about a function's name, return type, and parameters. The function definition provides the actual body of the function.</p>
+        <pre><code>
+        // Function declaration
+        int add(int a, int b);
+        
+        // Function definition
+        int add(int a, int b) {
+          return a + b;
+        }
+        </code></pre>
+        
+        <h4>Calling Functions</h4>
+        <p>Once a function is declared and defined, it can be called from any part of the program. When calling a function, provide the necessary arguments.</p>
+        <pre><code>
+        int result = add(5, 3);  // Function call
+        std::cout << "Result: " << result << std::endl;
+        </code></pre>
+        
+        <h4>Returning Values from Functions</h4>
+        <p>Functions can return values using the <code>return</code> statement. The return type of the function must match the type of value returned.</p>
+        <pre><code>
+        double multiply(double x, double y) {
+          return x * y;
+        }
+        
+        double product = multiply(4.5, 2.0);
+        std::cout << "Product: " << product << std::endl;
+        </code></pre>
+        
+        <h4>Void Functions</h4>
+        <p>Functions that do not return a value have a return type of <code>void</code>. These functions typically perform operations but do not send a value back to the caller.</p>
+        <pre><code>
+        void printMessage() {
+          std::cout << "Hello, World!" << std::endl;
+        }
+        
+        printMessage();  // Function call
+        </code></pre>
+        
+        <h4>Function Parameters</h4>
+        <p>Functions can take zero or more parameters. Parameters allow functions to accept input and perform operations based on that input.</p>
+        <pre><code>
+        void displaySum(int a, int b) {
+          std::cout << "Sum: " << (a + b) << std::endl;
+        }
+        
+        displaySum(10, 5);  // Output: Sum: 15
+        </code></pre>
+        
+        <h4>Default Parameters</h4>
+        <p>C++ allows functions to have default parameter values. These are used when arguments are not provided for those parameters during a function call.</p>
+        <pre><code>
+        void greet(std::string name = "Guest") {
+          std::cout << "Hello, " << name << "!" << std::endl;
+        }
+        
+        greet();             // Output: Hello, Guest!
+        greet("Alice");      // Output: Hello, Alice!
+        </code></pre>
+        
+        <h4>Summary</h4>
+        <p>Functions in C++ are essential for creating modular, reusable code. They help in breaking down complex tasks, improving code readability, and making maintenance easier. Understanding function declaration, definition, calling, and parameter handling is crucial for effective C++ programming.</p>
+        
+        <h2>Recursion in C++</h2>
+        <p>Recursion in C++ is a technique in which a function calls itself repeatedly until a given condition is satisfied. In other words, recursion is the process of solving a problem by breaking it down into smaller, simpler sub-problems.</p>
+        
+        <h3>Syntax Structure of Recursion</h3>
+        <pre><code>
+        return_type recursive_func(parameters) {
+            ....
+               // Base Condition
+               // Recursive Case
+            ....
+        }
+        </code></pre>
+        
+        <h3>Recursive Function</h3>
+        <p>A function that calls itself is called a recursive function. When a recursive function is called, it executes a set of instructions and then calls itself to execute the same set of instructions with a smaller input. This process continues until a base case is reached, which is a condition that stops the recursion and returns a value.</p>
+        
+        <h3>Base Condition</h3>
+        <p>The base condition is the condition that is used to terminate the recursion. The recursive function will keep calling itself until the base condition is satisfied.</p>
+        
+        <h3>Recursive Case</h3>
+        <p>The recursive case is the way in which the recursive call is present in the function. The recursive case can contain multiple recursive calls or different parameters such that, at the end, the base condition is satisfied and the recursion is terminated.</p>
+        
+        <h3>Example of C++ Recursion</h3>
+        <p>The following C++ program illustrates how to perform recursion:</p>
+        <pre><code>
+        // C++ Program to calculate the sum of first N natural
+        // numbers using recursion
+        #include <iostream>
+        using namespace std;
+        
+        int nSum(int n) {
+            // base condition to terminate the recursion when N = 0
+            if (n == 0) {
+                return 0;
+            }
+        
+            // recursive case / recursive call
+            int res = n + nSum(n - 1);
+        
+            return res;
+        }
+        
+        int main() {
+            int n = 5;
+        
+            // calling the function
+            int sum = nSum(n);
+        
+            cout << "Sum = " << sum;
+            return 0;
+        }
+        </code></pre>
+        <p>Output:</p>
+        <pre><code>
+        Sum = 15
+        </code></pre>
+        <p>In the above example:</p>
+        <ul>
+          <li>Recursive Function: <code>nSum()</code> is the Recursive Function.</li>
+          <li>Recursive Case: The expression, <code>int res = n + nSum(n – 1)</code> is the Recursive Case.</li>
+          <li>Base Condition: The base condition is <code>if (n == 0) { return 0; }</code></li>
+        </ul>
+        
+        <h3>Working of Recursion in C++</h3>
+        <p>To understand how C++ recursion works, we will again refer to the example above and trace the flow of the program:</p>
+        <ol>
+          <li>In the <code>nSum()</code> function, Recursive Case is <code>int res = n + nSum(n - 1);</code></li>
+          <li>In the example, <code>n = 5</code>, so as <code>nSum(5)</code>’s recursive case, we get <code>int res = 5 + nSum(4);</code></li>
+          <li>In <code>nSum(4)</code>, the recursion case and everything else will be the same, but <code>n = 4</code>. Let’s evaluate the recursive case for <code>n = 4</code>: <code>int res = 4 + nSum(3);</code></li>
+          <li>Similarly, for <code>nSum(3)</code>, <code>nSum(2)</code>, and <code>nSum(1)</code>: <br>
+          <code>int res = 3 + nSum(2);</code> // <code>nSum(3)</code><br>
+          <code>int res = 2 + nSum(1);</code> // <code>nSum(2)</code><br>
+          <code>int res = 1 + nSum(0);</code> // <code>nSum(1)</code></li>
+          <li>Now recall that the return value of the <code>nSum()</code> function in this same integer named <code>res</code>. So, instead of the function, we can put the value returned by these functions. As such, for <code>nSum(5)</code>, we get <code>int res = 5 + 4 + nSum(3);</code></li>
+          <li>Similarly, putting return values of <code>nSum()</code> for every <code>n</code>, we get <code>int res = 5 + 4 + 3 + 2 + 1 + nSum(0);</code></li>
+          <li>In <code>nSum()</code> function, the base condition is <code>if (n == 0) { return 0; }</code>, which means that when <code>nSum(0)</code> will return 0. Putting this value in <code>nSum(5)</code>’s recursive case, we get <code>int res = 5 + 4 + 3 + 2 + 1 + 0;</code> = 15</li>
+          <li>At this point, we can see that there are no function calls left in the recursive case. So the recursion will stop here and the final value returned by the function will be 15 which is the sum of the first 5 natural numbers.</li>
+        </ol>
+        
+        <h3>Memory Management in C++ Recursion</h3>
+        <p>Like all other functions, the recursive function’s data is stored in the stack memory in the form of a stack frame. This stack frame is deleted once the function returns some value. In recursion:</p>
+        <ul>
+          <li>The function call is made before returning the value, so the stack frame for the progressive recursive calls is stored on top of existing stack frames in the stack memory.</li>
+          <li>When the topmost function copy returns some value, its stack frame is destroyed and the control comes to the function just before that particular copy after the point where the recursive call was made for the top copy.</li>
+          <li>The compiler maintains an instruction pointer to track where to return after the function execution.</li>
+        </ul>
+        <p>Let’s consider the above example and understand the memory management of <code>nSum(5)</code> function:</p>
+        <ol>
+          <li>When <code>nSum()</code> is called from the <code>main()</code> function with 5 as an argument, a stack frame for <code>nSum(5)</code> is created.</li>
+          <li>While executing <code>nSum(5)</code>, a recursive call is encountered as <code>nSum(4)</code>. The compiler will now create a new stack frame on top of the <code>nSum(5)</code>’s stack frame and maintain an instruction pointer at the statement where <code>nSum(4)</code> was encountered.</li>
+          <li>The execution of <code>nSum(4)</code> will start, but just like the previous function, we encounter another recursive call as <code>nSum(3)</code>. The compiler will again follow the same steps and maintain another instruction pointer and stack frame for <code>nSum(3)</code>.</li>
+          <li>The same thing will happen with <code>nSum(3)</code>, <code>nSum(2)</code>, and <code>nSum(1)</code>’s execution.</li>
+          <li>But when the control comes to <code>nSum(0)</code>, the condition <code>(n == 0)</code> becomes true and the statement <code>return 0</code> is executed.</li>
+          <li>As the value is returned by the <code>nSum(0)</code>, the stack frame for the <code>nSum(0)</code> will be destroyed, and using the instruction pointer, the program control will return to the <code>nSum(1)</code> function and the <code>nSum(0)</code> call will be replaced by value 0.</li>
+          <li>Now, in <code>nSum(1)</code>, the expression <code>int res = 1 + 0</code> will be evaluated and the statement <code>return res</code> will be executed. The program control will move to the <code>nSum(2)</code> using its instruction pointer.</li>
+          <li>In <code>nSum(2)</code>, <code>nSum(1)</code> call will be replaced by the value it returned, which is 1. So, after evaluating <code>int res = 2 + 1</code>, 3 will be returned to <code>nSum(3)</code>. Same thing will keep happening till the control comes to the <code>nSum(5)</code> again.</li>
+          <li>When the control reaches the <code>nSum(5)</code>, the expression <code>int res = 5 + nSum(4)</code> will look like <code>int res = 5 + 10</code>. Finally, this value will be returned to the <code>main()</code> function and the execution of <code>nSum()</code> function will stop.</li>
+        </ol>
+        
+        <h3>What is Stack Overflow?</h3>
+        <p>Stack overflow is one of the most common errors associated with recursion which occurs when a function calls itself too many times. As we know that each recursive call requires separate space in the limited stack memory. When there is a large number of recursive calls or recursion goes on infinite times, this stack memory may get exhausted and may not be able to store more data leading to program termination.</p>
+        
+        <h3>Types of Recursion in C++</h3>
+        <p>There are two different types of recursion which are as follows:</p>
+        <ol>
+          <li>Direct Recursion</li>
+          <li>Indirect Recursion</li>
+        </ol>
+        
+        <h4>Direct Recursion</h4>
+        <p>In direct recursion, the function contains one or more recursive calls to itself. The function directly calls itself in the direct recursion and there is no intermediate function. Direct recursion can also be classified into three types based on how and how many recursive calls are present in the body of the function:</p>
+        <ul>
+          <li><b>Head Recursion:</b> In head recursion, the recursive call is present at the start of the function. It is a kind of linear recursion where only a single recursive call is used.</li>
+          <li><b>Tail Recursion:</b> Tail recursion is a linear recursion where it’s one and only recursive call is present at the end of the function. The recursive call is generally the last statement in the function. The significance of tail recursion is that we can reduce its memory consumption by using tail call optimization.</li>
+          <li><b>Tree Recursion:</b> In tree recursion, there are multiple recursive calls present in the body of the function. While tracing tree recursion, we get a tree-like structure where multiple recursive calls branch from one function.</li>
+        </ul>
+        
+        <h4>Indirect Recursion</h4>
+        <p>In indirect recursion, the function does not call itself directly but instead, it calls another function which then eventually calls the first function creating a cycle of function calls.</p>
+        
+        <h3>Examples of Recursion in C++</h3>
+        <p>The following examples will improve the understanding of C++ recursion:</p>
+        
+        <h4>Example 1: Fibonacci Series using Recursion</h4>
+        <pre><code>
+        // C++ Program to find fibonacci series using recursion
+        #include <iostream>
+        using namespace std;
+        
+        // Function for fibonacci
+        int fib(int n) {
+            // Stop condition
+            if (n == 0)
+                return 0;
+            // Stop condition
+            if (n == 1 || n == 2)
+                return 1;
+            // Recursion function
+            else
+                return (fib(n - 1) + fib(n - 2));
+        }
+        
+        // Driver Code
+        int main() {
+            // Initialize variable n.
+            int n = 5;
+            cout << "Fibonacci series of 5 numbers is: ";
+            // for loop to print the fibonacci series.
+            for (int i = 0; i < n; i++) {
+                cout << fib(i) << " ";
+            }
+            return 0;
+        }
+        </code></pre>
+        <p>Output:</p>
+        <pre><code>
+        Fibonacci series of 5 numbers is: 0 1 1 2 3 
+        </code></pre>
+        <p>In this example, the Fibonacci function calls itself with smaller inputs (<code>n – 1</code> and <code>n – 2</code>) until it reaches the base case (<code>n <= 1</code>) and returns a value.</p>
+        
+        <h4>Example 2: Print Array in reverse order using recursion</h4>
+        <pre><code>
+        // C++ Program to print array using recursion
+        #include <iostream>
+        using namespace std;
+        
+        // recursive function to print array
+        void pArray(int* arr, int n) {
+            // base condition
+            if (n == 0) {
+                return;
+            }
+            // recursive call
+            cout << arr[n - 1] << ' ';
+            pArray(arr, n - 1);  
+        }
+        
+        int main() {
+            // declaring array
+            int arr[5] = { 1, 2, 3, 4, 5 };
+            // calling function
+            pArray(arr, 5);
+            return 0;
+        }
+        </code></pre>
+        <p>Output:</p>
+        <pre><code>
+        5 4 3 2 1 
+        </code></pre>
+        
+        <h3>Applications of Recursion</h3>
+        <p>Recursion has many applications in computer science and programming. Here are some of the most common applications of recursion:</p>
+        <ul>
+          <li><b>Solving:</b> Fibonacci sequences, Factorial Function, Reversing an array, Tower of Hanoi.</li>
+          <li><b>Backtracking:</b> It is a technique for solving problems by trying out different solutions and undoing them if they do not work. Recursive algorithms are often used in backtracking.</li>
+          <li><b>Searching and Sorting Algorithms:</b> Many searching and sorting algorithms, such as binary search and quicksort, use recursion to divide the problem into smaller sub-problems.</li>
+          <li><b>Tree and Graph Traversal:</b> Recursive algorithms are often used to traverse trees and graphs, such as depth-first search and breadth-first search.</li>
+          <li><b>Mathematical Computations:</b> Recursion is also used in many mathematical computations, such as the factorial function and the Fibonacci sequence.</li>
+          <li><b>Dynamic Programming:</b> It is a technique for solving optimization problems by breaking them down into smaller sub-problems. Recursive algorithms are often used in dynamic programming.</li>
+        </ul>
+        <p>Overall, recursion is a powerful and versatile technique that can be used to solve a wide range of problems in programming and computer science.</p>
+      </div>
+
+
+
+        <div class="right-column">
+          <h2>C++ PROGRAMMING</h2>
+          <h4>TABLE OF CONTENT</h4>
+          <ol>
+            <li>Introduction</li>
+            <li>C++ Basics</li>
+            <li>Datatypes</li>
+            <li>Input/Output</li>
+            <li>Operators</li>
+            <ul>
+              <li>Arithmetic Operator</li>
+              <li>Relational Operator</li>
+              <li>Logical Operator</li>
+              <li>Bitwise Operator</li>
+              <li>Assignment Operator</li>
+              <li>Ternary or Conditional Operator</li>
+            </ul>
+            <li>Decision Making</li>
+            <ul>
+              <li>if Statement</li>
+              <li>if-else Statement</li>
+              <li>Nested if Statement</li>
+              <li>if-else-if Ladder Statement</li>
+              <li>Switch Statement</li>
+              <li>Jump Statement</li>
+              <ol>
+                <li>break</li>
+                <li>continue</li>
+                <li>goto</li>
+                <li>return</li>
+              </ol>
+            </ul>
+            <li>Control Structure</li>
+            <ul>
+              <li>for loop</li>
+              <li>while loop</li>
+              <li>do-while loop</li>
+            </ul>
+            <li>Arrays</li>
+            <li>Functions</li>
+            <li>Recursion</li>
+            <li>Strings</li>
+          </ol>
+        </div>
+      </main>
+      <footer>
+        <p>©Copyright 2050 by C++ programming. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

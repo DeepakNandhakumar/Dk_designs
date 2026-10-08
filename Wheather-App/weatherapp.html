@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .card {
+            background: linear-gradient(135deg, rgb(197, 247, 235), rgba(7, 7, 176, 0.856));
+            width: 90%;
+            text-align: center;
+            max-width: 470px;
+            border-radius: 60px;
+            color: white;
+            margin: 100px auto 0;
+            padding: 40px 35px;
+        }
+        .search {
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+        }
+        .search input {
+            border: none;
+            outline: none;
+            background: rgb(234, 252, 250);
+            font-size: 18px;
+            border-radius: 30px;
+            height: 50px;
+            color: black;
+            padding: 10px 25px;
+            margin-left: 20px;
+            margin-right: 10px; 
+            flex: 1;
+        }
+        .search button {
+            border: none;
+            outline: none;
+            height: 60px;
+            width: 60px;
+            border-radius: 30px;
+            background: rgb(234, 252, 250);
+        }
+        .weather h1 {
+            font-size: 60px;
+        }
+        .weather h2 {
+            font-size: 40px;
+        }
+        .Weather {
+            width: 200px; 
+            height: 200px;
+        }
+        .details {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .col {
+            display: flex;
+            align-items: center;
+        }
+        .col img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .col div p {
+            margin: 0;
+        }
+        .error {
+            display: none;
+            color: red;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" id="city-input" placeholder="Enter the city name">
+            <button id="search-btn"><img width="20px" height="20px" src="searchicon.jpg" alt="search"></button>
+        </div>
+        <div class="weather" id="weather" style="display:none;">
+            <img src="summerwithwind.png" class="Weather" id="weather-icon" alt="Weather Icon">
+            <h1 class="temp" id="temp">22°C</h1>
+            <h2 class="city" id="city">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="huminity.png" alt="Humidity Icon">
+                    <div>
+                        <p class="humidity" id="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="wind.png" alt="Wind Icon">
+                    <div>
+                        <p class="wind" id="wind">15 km/hr</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="error" id="error-msg">City not found!</div>
+    </div>
+    <script>
+        document.getElementById('search-btn').addEventListener('click', () => {
+            const city = document.getElementById('city-input').value;
+            const apiKey = '71c69016f6c7753e7552dfa8e13692c9'; 
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const errorMsg = document.getElementById('error-msg');
+                    if (data.cod === 200) {
+                        errorMsg.style.display = 'none';
+                        document.getElementById('city').textContent = data.name;
+                        document.getElementById('temp').textContent = `${data.main.temp}°C`;
+                        document.getElementById('humidity').textContent = `${data.main.humidity}%`;
+                        document.getElementById('wind').textContent = `${data.wind.speed} km/h`;
+                        
+                        const weatherCondition = data.weather[0].main.toLowerCase();
+                        const weatherIcon = document.getElementById('weather-icon');
+
+                        if (weatherCondition === 'clear') {
+                            weatherIcon.src = "summer.png";
+                        } else if (weatherCondition === 'rain') {
+                            weatherIcon.src = 'rainy.png';
+                        } else if (weatherCondition === 'snow') {
+                            weatherIcon.src = 'winter.png';
+                        } else if (weatherCondition === 'clouds') {
+                            weatherIcon.src = 'summerwithcloud.png';
+                        } else if (weatherCondition === 'wind') {
+                            weatherIcon.src = 'summerwithwind.png';
+                        } else {
+                            weatherIcon.src = 'slowrain.png';
+                        }
+                        
+                        document.getElementById('weather').style.display = 'block';
+                    } else {
+                        errorMsg.style.display = 'block';
+                        document.getElementById('weather').style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                    const errorMsg = document.getElementById('error-msg');
+                    errorMsg.textContent = 'Error fetching weather data. Please try again later.';
+                    errorMsg.style.display = 'block';
+                    document.getElementById('weather').style.display = 'none';
+                });
+        });
+    </script>
+</body>
+</html>

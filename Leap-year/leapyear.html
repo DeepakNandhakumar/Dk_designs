@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Leap year</title>
+    </head>
+    <body>
+        Enter Year:<input type="text" id="a"><br><br>
+        <button type="submit" onclick="leap()">Check</button>
+        <div id="c"></div>
+
+        <script>
+            function leap(){
+                const a=Number(document.getElementById("a").value)
+                const c=document.getElementById("c")
+                if((a%4==0 && a%100!=0) ||(a%400==0))
+                {
+                    c.innerHTML="Yes";
+                }
+                else{
+                    c.innerHTML="No";
+                }
+            }
+        </script>
+
+    </body>
+</html>

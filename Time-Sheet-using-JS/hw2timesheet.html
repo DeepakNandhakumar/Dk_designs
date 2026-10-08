@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timesheet Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 3px;
+            color: #333;
+        }
+
+        .input-group input {
+            width: calc(100% - 10px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Timesheet Calculator</h1>
+        <div class="input-group">
+            <label for="sunday">Sunday:</label>
+            <input type="text" id="sunday">
+        </div>
+        <div class="input-group">
+            <label for="monday">Monday:</label>
+            <input type="text" id="monday">
+        </div>
+        <div class="input-group">
+            <label for="tuesday">Tuesday:</label>
+            <input type="text" id="tuesday">
+        </div>
+        <div class="input-group">
+            <label for="wednesday">Wednesday:</label>
+            <input type="text" id="wednesday">
+        </div>
+        <div class="input-group">
+            <label for="thursday">Thursday:</label>
+            <input type="text" id="thursday">
+        </div>
+        <div class="input-group">
+            <label for="friday">Friday:</label>
+            <input type="text" id="friday">
+        </div>
+        <div class="input-group">
+            <label for="saturday">Saturday:</label>
+            <input type="text" id="saturday">
+        </div>
+        <button type="button" onclick="calculateSalary()">Calculate Salary</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateSalary() {
+            const sunday = Number(document.getElementById("sunday").value);
+            const monday = Number(document.getElementById("monday").value);
+            const tuesday = Number(document.getElementById("tuesday").value);
+            const wednesday = Number(document.getElementById("wednesday").value);
+            const thursday = Number(document.getElementById("thursday").value);
+            const friday = Number(document.getElementById("friday").value);
+            const saturday = Number(document.getElementById("saturday").value);
+
+            const normalRate = 100;
+            const extraRate = 115;
+
+            let i = sunday * 150;
+            let q = saturday * 125;
+
+            let j, k, l, m, n, o, p;
+
+            if (monday <= 8) {
+                j = monday * 100;
+            } else {
+                o = monday - 8;
+                p = o * 115;
+                j = p + 800;
+            }
+
+            if (tuesday <= 8) {
+                k = tuesday * 100;
+            } else {
+                o = tuesday - 8;
+                p = o * 115;
+                k = p + 800;
+            }
+
+            if (wednesday <= 8) {
+                l = wednesday * 100;
+            } else {
+                o = wednesday - 8;
+                p = o * 115;
+                l = p + 800;
+            }
+
+            if (thursday <= 8) {
+                m = thursday * 100;
+            } else {
+                o = thursday - 8;
+                p = o * 115;
+                m = p + 800;
+            }
+
+            if (friday <= 8) {
+                n = friday * 100;
+            } else {
+                o = friday - 8;
+                p = o * 115;
+                n = p + 800;
+            }
+
+            let totalPay = i + j + k + l + m + n + q;
+
+            document.getElementById("result").innerHTML = "John's Salary for the week is: Rs." + totalPay;
+        }
+    </script>
+</body>
+</html>

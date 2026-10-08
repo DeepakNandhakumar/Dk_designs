@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #a363aa;
+            --secondary-color: #ff994f;
+            --accent-color: #fa6d86;
+            --background-color: #ffdad5;
+            --background-gradient: linear-gradient(135deg, #eb3030, #6b90e4);
+            --input-bg-color: #fff;
+            --input-focus-border-color: #ff994f;
+            --input-placeholder-color: #a9a9a9;
+            --button-bg-gradient: linear-gradient(270deg, #f60c37, #6b90e4);
+            --button-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --border-radius: 20px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--background-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .contact-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--input-bg-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 1000px;
+            width: 90%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .contact-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .contact-left-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 40px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .contact-left-title h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .contact-inputs {
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            padding-left: 25px;
+            font-weight: 500;
+            color: #666;
+            border-radius: 50px;
+            background-color: var(--input-bg-color);
+            transition: all 0.3s ease;
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-left textarea {
+            height: 140px;
+            padding: 15px 25px;
+            border-radius: 20px;
+            resize: none;
+        }
+
+        .contact-inputs:focus {
+            border: 2px solid var(--input-focus-border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-inputs::placeholder {
+            color: var(--input-placeholder-color);
+        }
+
+        .contact-left button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            gap: 10px;
+            border: none;
+            border-radius: 50px;
+            background: var(--button-bg-gradient);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--button-shadow);
+        }
+
+        .contact-left button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-left button img {
+            height: 15px;
+        }
+
+        .contact-right img {
+            max-width: 500px;
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @media (max-width: 800px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .contact-right {
+                display: none;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+<div class="contact-container">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+        <div class="contact-left-title">
+            <h2>Get in touch</h2>
+        </div>
+        <input type="hidden" name="access_key" value="c9dbbf07-c234-4684-a286-ccf7e09b890e">
+        <input type="text" name="name" placeholder="Your name" class="contact-inputs" required>
+        <input type="text" name="phone" placeholder="Your Mobile Number" class="contact-inputs" required>
+        <input type="email" name="email" placeholder="Your email" class="contact-inputs" required>
+        <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+        <button type="submit">Submit <img src="arrow_icon.png" alt="Arrow icon"></button>
+    </form>
+    <div class="contact-right">
+        <img src="right_img.png" alt="Contact image">
+    </div>
+</div>
+</body>
+</html>

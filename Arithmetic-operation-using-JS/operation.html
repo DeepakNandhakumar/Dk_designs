@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Multiplication</title>
+    </head>
+    <body>
+        Enter value A:<input type="text" id="a"><br><br>
+        Enter value B:<input type="text" id="b"><br><br>
+        <button type="submit" onclick="add()">Addition</button>
+        <button type="submit" onclick="sub()">Subtraction</button>
+        <button type="submit" onclick="mul()">Multiplication</button>
+        <button type="submit" onclick="divi()">Division</button>
+        <button type="submit" onclick="modu()">Modulus</button>
+        <div id="c"></div>
+        <div id="d"></div>
+        <div id="e"></div>
+        <div id="f"></div>
+        <div id="g"></div>
+
+        <script>
+            function add()
+            {
+                const a=Number(document.getElementById("a").value)
+                const b=Number(document.getElementById("b").value)
+                const c=document.getElementById("c")
+                const res=a+b;
+             
+                c.innerHTML="Addition="+res;
+            }
+            function sub()
+            {
+                const a=Number(document.getElementById("a").value)
+                const b=Number(document.getElementById("b").value)
+                const c=document.getElementById("d")
+                const res1=a-b;
+             
+                d.innerHTML="Subtraction="+res1;
+            }
+            function mul(){
+                const a=Number(document.getElementById("a").value)
+                const b=Number(document.getElementById("b").value)
+                const c=document.getElementById("e")
+                const res2=a*b;
+             
+                e.innerHTML="Multiple="+res2;
+            }
+            function divi()
+            {
+                const a=Number(document.getElementById("a").value)
+                const b=Number(document.getElementById("b").value)
+                const c=document.getElementById("f")
+                const res3=a/b;
+             
+                f.innerHTML="Division="+res3;
+            }
+            function modu()
+            {
+                const a=Number(document.getElementById("a").value)
+                const b=Number(document.getElementById("b").value)
+                const c=document.getElementById("g")
+                const res4=a%b;
+             
+                g.innerHTML="Modulus="+res4;
+            }
+        </script>
+
+    </body>
+</html>

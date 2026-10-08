@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Petshop</title>
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Dancing Script';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        header {
+            font-size: large;
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(to right, rgb(255, 160, 152), rgb(65, 116, 235));
+            box-shadow: 0 4px 6px rgb(147, 17, 123);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        h1 {
+            font-style: oblique;
+            margin-right: 20px;
+            padding: 10px;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+        .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-size: x-large;
+        }
+        .search {
+            margin-left: 15px;
+            margin-right: 15px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .signin-button {
+            padding: 3px 10px;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            margin-right: 10px;
+        }
+        .content-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 75%;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .pet-item {
+            text-align: center;
+            margin: 15px;
+            width: calc(33% - 30px); 
+        }
+        .pet-item img {
+            width: 200px; 
+            height: 200px; 
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .pet-item img:hover {
+            transform: scale(1.05);
+        }
+        .pet-item a {
+            display: block; 
+            margin-top: 10px;
+            color: #333;
+            font-size: 1.5em;
+            text-decoration: none; 
+        }
+        .ft {
+            margin-top: 20px;
+            font-weight:bold;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(to right, rgb(255, 160, 152), rgb(65, 116, 235));
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chewy Pet Shop</h1>
+        <div class="nav-links">
+            <a href="#">Home</a>
+        </div>
+        <input type="text" class="search" placeholder="Search...">
+        <a href="#" class="signin-button">Sign In</a>
+    </header>
+    <div class="content-box">
+        <div class="pet-item">
+            <a href="petshophwdog.html">
+                <img src="https://e1.pxfuel.com/desktop-wallpaper/379/113/desktop-wallpaper-cute-puppy-on-dog-dog-laptop.jpg" alt="Dog">
+                <p>Dog</p>
+            </a>
+        </div>
+        <div class="pet-item">
+            <a href="petshophwcat.html">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/cute-cat-photos-1593441022.jpg?crop=0.670xw:1.00xh;0.167xw,0&resize=640:*" alt="Cat">
+                <p>Cat</p>
+            </a>
+        </div>
+        <div class="pet-item">
+            <a href="petshophwrabbit.html">
+                <img src="https://cdn.shopify.com/s/files/1/0040/8997/0777/files/Cute_Bunny_7d_1024x1024.jpg?v=1698453869" alt="Rabbit">
+                <p>Rabbit</p>
+            </a>
+        </div>
+        <div class="pet-item">
+            <a href="petshophwbird.html">
+                <img src="https://media.istockphoto.com/id/1243410279/photo/portrait-of-two-cute-cuddling-budgies-perched-on-branch-with-blue-background-as-symbol-of.jpg?s=612x612&w=0&k=20&c=d3YXfJpe6GS1qqs6V-bQVQpLNKv2Dd6Yvh7unm1KeGU=" alt="Bird">
+                <p>Birds</p>
+            </a>
+        </div>
+        <div class="pet-item">
+            <a href="petshophwfish.html">
+                <img src="https://static.wixstatic.com/media/e7d5c9_935128562be7407287f96c6c578bedac~mv2.jpg/v1/fill/w_441,h_524,al_c,q_80,enc_auto/e7d5c9_935128562be7407287f96c6c578bedac~mv2.jpg" alt="Fish">
+                <p>Fish</p>
+            </a>
+        </div>
+        <div class="pet-item">
+            <a href="petshophwhorse.html">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/046/925/158/small_2x/chestnut-horse-running-through-autumn-field-photo.jpg" alt="Horse">
+                <p>Horse</p>
+            </a>
+        </div>
+    </div>
+    <div class="ft">
+        <em>
+            To Contact us, contact number: 6382996124
+            <p>Email-ID: deepakdeepak01452@gmail.com</p>
+        </em>
+        <p>© Chewy Pet Shop Private limited . com</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak N - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #941919, #d32f2f);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin: 10px 0;
+        }
+
+        .profile-picture {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            background-color: #222;
+            text-align: center;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #84a6e9;
+        }
+
+        .section-content {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+            transition: transform 0.3s;
+        }
+
+        .section-content:hover {
+            transform: scale(1.02);
+        }
+
+        .download-button {
+            background: linear-gradient(135deg, #941919, #d32f2f);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .download-button:hover {
+            background: #d32f2f;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #222;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="deepak1.jpg" alt="Deepak N" class="profile-picture">
+        <div class="header-content">
+            <h1>Deepak N</h1>
+            <p>BCA Student | Developer</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section-content">
+        <h2>About Me</h2>
+        <p>Hello everyone, I am Deepak from Tirupur, currently pursuing a Bachelor of Computer Applications (BCA) at FACE Prep Campus...</p>
+    </section>
+
+    <section id="education" class="section-content">
+        <h2>Education</h2>
+        <p>BCA - Bharathiar University (Second Year)</p>
+    </section>
+
+    <section id="skills" class="section-content">
+        <h2>Skills</h2>
+        <ul>
+            <li>C</li>
+            <li>C++</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>HTML, CSS, JavaScript</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="section-content">
+        <h2>Projects</h2>
+        <ul>
+            <li>To-Do List</li>
+            <li>Dino Game</li>
+            <li>Pokémon Cards Game</li>
+            <li>Calculator</li>
+            <li>QR Code Generator</li>
+        </ul>
+    </section>
+
+    <section id="resume" class="section-content" style="text-align: center;">
+        <h2>Resume</h2>
+        <a href="Deepak N resume.pdf" target="_blank" class="download-button">Download CV</a>
+    </section>
+
+    <section id="contact" class="section-content">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:deepakdeepak01452@gmail.com">deepakdeepak01452@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/deepak-n-27665428b" target="_blank">Deepak N</a></p>
+        <p>GitHub: <a href="https://github.com/DeepakNandhakumar" target="_blank">github.com/DeepakNandhakumar</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Deepak N | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

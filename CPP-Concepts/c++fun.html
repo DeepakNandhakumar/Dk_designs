@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>C++ programming</title>
+
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 3px;
+            background-color:cyan;
+            color: black;
+            text-align: center;
+            margin: 0;
+        }
+        nav {
+            background-color: cyan;
+            text-align: center;
+            padding: 10px;
+            color: black;
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size:larger;
+        }
+        nav form {
+            display: inline-block;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+        nav input[type="search"] {
+            background-color: white;
+            border: none;
+            padding: 5px;
+        }
+        nav input[type="submit"] {
+            background-color: cyan;
+            color: black;
+            border: none;
+            padding: 5px;
+        }
+        .left-column {
+            background-color: white;
+            width: 70%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .right-column {
+            background-color:beige ;
+            width: 30%;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            width: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-grow: 1;
+        }
+        footer {
+            padding: 10px 0;
+            background-color: lightblue;
+            color: black;
+            text-align: center;
+            margin-top: auto;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>C++ PROGRAMMING</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="c++proweb.html">Home</a></li>
+          <li><a href="c++io.html">Input/Output</a></li>
+          <li><a href="c++operator.html">Operators</a></li>
+          <li><a href="c++dm.html">Decision Making</a></li>
+          <li><a href="c++constr.html">Control Structure</a></li>
+          <li><a href="c++array.html">Arrays</a></li>
+          <li><a href="c++fun.html">Functions</a></li>
+          <li><a href="c++recursion.html">Recursion</a></li>
+          <li><a href="c++string.html">Strings</a></li>
+        </ul>
+
+        <form>
+          <input type="search" name="Search" placeholder="Search" />
+          <input type="submit" value="Search" />
+        </form>
+      </nav>
+      <main>
+      
+<div class="left-column">
+  <h2>C++ PROGRAMMING</h2>
+
+<h4>Functions</h4>
+<p>Functions are a fundamental building block in C++ programming that allow you to break down complex problems into smaller, manageable tasks. They enable code reusability and better organization.</p>
+
+<h4>Function Declaration and Definition</h4>
+<p>A function must be declared before it is used in a program. A function declaration tells the compiler about a function's name, return type, and parameters. The function definition provides the actual body of the function.</p>
+<pre><code>
+// Function declaration
+int add(int a, int b);
+
+// Function definition
+int add(int a, int b) {
+  return a + b;
+}
+</code></pre>
+
+<h4>Calling Functions</h4>
+<p>Once a function is declared and defined, it can be called from any part of the program. When calling a function, provide the necessary arguments.</p>
+<pre><code>
+int result = add(5, 3);  // Function call
+std::cout << "Result: " << result << std::endl;
+</code></pre>
+
+<h4>Returning Values from Functions</h4>
+<p>Functions can return values using the <code>return</code> statement. The return type of the function must match the type of value returned.</p>
+<pre><code>
+double multiply(double x, double y) {
+  return x * y;
+}
+
+double product = multiply(4.5, 2.0);
+std::cout << "Product: " << product << std::endl;
+</code></pre>
+
+<h4>Void Functions</h4>
+<p>Functions that do not return a value have a return type of <code>void</code>. These functions typically perform operations but do not send a value back to the caller.</p>
+<pre><code>
+void printMessage() {
+  std::cout << "Hello, World!" << std::endl;
+}
+
+printMessage();  // Function call
+</code></pre>
+
+<h4>Function Parameters</h4>
+<p>Functions can take zero or more parameters. Parameters allow functions to accept input and perform operations based on that input.</p>
+<pre><code>
+void displaySum(int a, int b) {
+  std::cout << "Sum: " << (a + b) << std::endl;
+}
+
+displaySum(10, 5);  // Output: Sum: 15
+</code></pre>
+
+<h4>Default Parameters</h4>
+<p>C++ allows functions to have default parameter values. These are used when arguments are not provided for those parameters during a function call.</p>
+<pre><code>
+void greet(std::string name = "Guest") {
+  std::cout << "Hello, " << name << "!" << std::endl;
+}
+
+greet();             // Output: Hello, Guest!
+greet("Alice");      // Output: Hello, Alice!
+</code></pre>
+
+<h4>Summary</h4>
+<p>Functions in C++ are essential for creating modular, reusable code. They help in breaking down complex tasks, improving code readability, and making maintenance easier. Understanding function declaration, definition, calling, and parameter handling is crucial for effective C++ programming.</p>
+</div>
+
+        <div class="right-column">
+          <h2>C++ PROGRAMMING</h2>
+          <h4>TABLE OF CONTENT</h4>
+          <ol>
+            <li>Introduction</li>
+            <li>C++ Basics</li>
+            <li>Datatypes</li>
+            <li>Input/Output</li>
+            <li>Operators</li>
+            <ul>
+              <li>Arithmetic Operator</li>
+              <li>Relational Operator</li>
+              <li>Logical Operator</li>
+              <li>Bitwise Operator</li>
+              <li>Assignment Operator</li>
+              <li>Ternary or Conditional Operator</li>
+            </ul>
+            <li>Decision Making</li>
+            <ul>
+              <li>if Statement</li>
+              <li>if-else Statement</li>
+              <li>Nested if Statement</li>
+              <li>if-else-if Ladder Statement</li>
+              <li>Switch Statement</li>
+              <li>Jump Statement</li>
+              <ol>
+                <li>break</li>
+                <li>continue</li>
+                <li>goto</li>
+                <li>return</li>
+              </ol>
+            </ul>
+            <li>Control Structure</li>
+            <ul>
+              <li>for loop</li>
+              <li>while loop</li>
+              <li>do-while loop</li>
+            </ul>
+            <li>Arrays</li>
+            <li>Functions</li>
+            <li>Recursion</li>
+            <li>Strings</li>
+          </ol>
+        </div>
+      </main>
+      <footer>
+        <p>©Copyright 2050 by C++ programming. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding questions</title>
+    <style>
+        body {
+    background-color: rgb(19, 19, 19);
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Oxygen, Fira Sans, Droid Sans, sans-serif;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    display: flex;
+    margin-left: 40px;
+}
+p{
+    color: rgb(186, 182, 182);
+    font-size: 15px;
+}
+
+.bx {
+    border: 2px solid white;
+    height: 50px;
+    width: 550px;
+    border-radius: 15px;
+    margin-top: 70px;
+    margin-left: 280px;
+    margin-right: 100px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tc {
+    border: 2px solid rgb(186,182,182);
+    height: auto;
+    width: 450px;
+    border-radius: 15px;
+    margin-top: 70px;
+    margin-left: 320px;
+    margin-right: 120px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    order: 2;
+}
+
+.but {
+    padding: 20px;
+    color: rgb(186, 182, 182);
+    font-size: 25px;
+}
+
+.b {
+    background: rgb(19, 19, 19);
+    color: rgb(115, 114, 114);
+    font-size: 20px;
+    border: none;
+}
+
+.b:hover {
+    font-size: 25px;
+}
+
+h3{
+    color:antiquewhite;
+    font-size: 25px;
+}
+.mc {
+    font-size: 18px;
+    margin-top: 70px;
+    margin-right: 30px;
+    margin-left:10px;
+    order: 1;
+    color:rgb(186, 182, 182);
+}
+
+.ft {
+    font-size: 15px;
+    color: rgb(186, 182, 182);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Coding questions to be learned
+        <div class="bx">
+            <h4>Start learning - </h4><p>&nbsp;Most asked interview questions</p>
+        </div>
+    </h1>
+
+    <center><img src="codingimage.jpg"></center>
+
+    <div class="container">
+        <div class="tc">
+            <div class="but">
+                <h4>Table of Contents</h4>
+                <button type="submit" class="b">Fencing the Ground</button><br><br>
+                <button type="submit" class="b">Checking Alphabets</button><br><br>
+                <button type="submit" class="b">Odd or even</button><br><br>
+                <button type="submit" class="b">Leap year or not</button><br><br>
+                <button type="submit" class="b">Prime Number Check</button><br><br>
+                <button type="submit" class="b">Factorial Calculation</button><br><br>
+                <button type="submit" class="b">Fibonacci Series</button><br><br>
+                <button type="submit" class="b">Largest of Three Numbers</button><br><br>
+                <button type="submit" class="b">Sum of Digits</button><br><br>
+                <button type="submit" class="b">Reverse a String</button><br><br>
+                <button type="submit" class="b">Factor of a Number</button><br><br>
+                
+            </div>
+        </div>
+
+        <div class="mc">
+            <h3>Fencing the Ground</h3>
+            <ul>
+                <li>Input: Read integers a and b.</li>
+                <li>Calculate Perimeter: Compute c = 2 * (a + b).</li>
+                <li>Calculate Area: Compute d = a * b.</li>
+                <li>Output Perimeter: Print "The required length is c m".</li>
+                <li>Output Area: Print "The required area of carpet is d sqm".</li>
+            </ul><br><br>
+            <center><img src="fensingtheground.jpg" width="500px" height="400px"></center><br><br>
+            <h3>Checking Alphabets</h3>
+            <ul>
+                <li>Input Character: Read a character n.</li>
+                <li>Check Alphabet: If n is between 'a' and 'z' or between 'A' and 'Z', proceed; else print "Not an alphabet".
+</li>
+                <li>Check Vowel: If n is 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', or 'U', print "Vowel".
+</li>
+                <li>Check Consonant: If n is an alphabet but not a vowel, print "Consonant".
+</li>
+                <li>End Program: Terminate the program.
+</li>
+            </ul><br><br>
+            <center><img src="checking.jpg" width="500px" height="550px"></center><br><br>
+            <h3>Odd or even</h3>
+            <ul>
+                <li>Input a number.</li>
+                <li>Divide number by two.</li>
+                <li>Check remainder.</li>
+                <li>If remainder is zero, output "even".</li>
+                <li>If remainder is not zero, output "odd".</li>
+            </ul><br><br>
+            <center><img src="oddorven.jpg" width="500px" height="400px"></center><br><br>
+            <h3>Leap year or not</h3>
+            <ul>
+                <li>Input a year.</li>
+                <li>If year is divisible by 4, go to next step; otherwise, output "not a leap year".</li>
+                <li>If year is divisible by 100, go to next step; otherwise, output "leap year".</li>
+                <li>If year is divisible by 400, output "leap year"; otherwise, output "not a leap year".</li>
+            </ul><br><br>
+            <center><img src="leapyear.jpg" width="500px" height="400px"></center><br><br>
+            <h3>Prime Number Check</h3>
+            <ul>
+                <li>Input a number n.</li>
+                <li>If n is less than 2, output "Not a prime number".</li>
+                <li>Check divisibility from 2 to sqrt(n).</li>
+                <li>If any number divides n, output "Not a prime number".</li>
+                <li>If no number divides n, output "Prime number".</li>
+            </ul><br><br>
+            <center><img src="prime.jpg" width="500px" height="500px"></center><br><br>
+            <h3>Factorial Calculation</h3>
+            <ul>
+                <li>Input a number n.</li>
+                <li>Initialize result as 1.</li>
+                <li>For i from 1 to n, multiply result by i.</li>
+                <li>Output the result.</li>
+            </ul><br><br>
+            <center><img src="factorial.jpg" width="500px" height="400px"></center><br><br>
+            <h3>Fibonacci Series</h3>
+            <ul>
+                <li>Input a number n.</li>
+                <li>Initialize variables a and b to 0 and 1 respectively.</li>
+                <li>Print a and b.</li>
+                <li>For i from 2 to n, compute next number as sum of a and b.</li>
+                <li>Update a and b to next number and print the next number.</li>
+            </ul><br><br>
+            <center><img src="fibonacci.jpg" width="500px" height="400px"></center><br><br>
+            <h3>Largest of Three Numbers</h3>
+            <ul>
+                <li>Input three numbers a, b, and c.</li>
+                <li>Compare a with b and c.</li>
+                <li>If a is largest, output a.</li>
+                <li>Else compare b with c.</li>
+                <li>If b is largest, output b; else output c.</li>
+            </ul><br><br>
+            <center><img src="threenumber.jpg" width="500px" height="400px"></center><br><br>
+            <h3>Sum of Digits</h3>
+            <ul>
+                <li>Input a number n.</li>
+                <li>Initialize sum to 0.</li>
+                <li>While n is greater than 0, add last digit of n to sum and remove last digit from n.</li>
+                <li>Output the sum.</li>
+            </ul><br><br>
+            <center><img src="sumofdigit.jpg" width="500px" height="400px"></center><br><br>
+            <h3>Reverse a String</h3>
+            <ul>
+                <li>Input a string s.</li>
+                <li>Initialize an empty string result.</li>
+                <li>For each character in s, prepend it to result.</li>
+                <li>Output the reversed string result.</li>
+            </ul><br><br>
+            <center><img src="reverce thestring.jpg" width="500px" height="400px"></center><br><br>
+            <h3>Factor of a Number</h3>
+            <ul>
+                <li>Input: Read an integer n.</li>
+                <li>Initialize: Set i to 1.</li>
+                <li>Check Factor: For each i from 1 to n, if n is divisible by i, print i.</li>
+                <li>Increment: Increase i by 1 and repeat until i > n.</li>
+                <li>End: Terminate the program.</li>
+            </ul><br><br>
+            <center><img src="factor.jpg" width="500px" height="400px"></center><br><br>
+        </div>
+    </div>
+
+    
+    <div class="ft">
+        <hr>
+        <em>
+            To Contact us, contact number: 6382996124
+        <p>Email-ID:deepakdeepak01452@gmail.com</p>
+    </em>
+    </div>
+</body>
+</html>

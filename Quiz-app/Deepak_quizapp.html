@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz app</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, rgb(180, 1, 132), rgba(120, 0, 139, 0.856));
+            width: 100%;
+            height: 100vh;
+        }
+        .app {
+            background: rgb(247,246,247);
+            border-radius: 10px;
+            width: 23%;
+            padding: 40px;
+            position: relative;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h1 {
+            font-size: 25px;
+            font-weight: 600;
+            color: rgb(19, 41, 62);
+            border-bottom: 3px solid rgb(19, 41, 62);
+            padding-bottom: 30px;
+        }
+        .quiz {
+            padding: 20px 0;
+        }
+        .quiz h2 {
+            font-size: 18px;
+            color: rgb(19, 41, 62);
+        }
+        .but {
+            background-color: white;
+            color: rgb(19, 41, 62);
+            font-weight: 500;
+            font-size: 14.5px;
+            width: 100%;
+            border: 1px solid rgb(55, 81, 105);
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        #nxt {
+            background: rgb(9,62,111);
+            color: white;
+            font-size: 15px;
+            font-weight: 520;
+            padding: 10px;
+            border-radius: 4px;
+            width: 100px;
+            border: none;
+            margin: 20px auto 0;
+            cursor: pointer;
+        }
+        .but:hover:not([disabled]) {
+            background: rgb(19, 41, 62);
+            color: white;
+            font-weight: 600;
+        }
+        .but:disabled {
+            cursor: no-drop;
+        }
+        .but:hover {
+            background: rgb(19, 38, 55);
+            color: white;
+            font-weight: 600;
+        }
+        .correct {
+            background: rgb(18, 217, 18);
+            border: rgb(17, 208, 17);
+            color: white;
+        }
+        .incorrect {
+            background: rgb(221, 51, 0);
+            border: rgb(220, 51, 0);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <h1>Quiz</h1>
+        <div class="quiz">
+            <h2 id="question">Question part</h2>
+            <div id="ansbut">
+                <button class="but">Answer 1</button><br>
+                <button class="but">Answer 2</button><br>
+                <button class="but">Answer 3</button><br>
+                <button class="but">Answer 4</button>
+            </div>
+            <button id="nxt">Next</button>
+        </div>
+    </div>
+<script>
+    const questions = [
+        {
+            question: "Which year you completed your school?",
+            answers: [
+                { text: "2022", correct: false },
+                { text: "2023", correct: true },
+                { text: "2020", correct: false },
+                { text: "2024", correct: false }
+            ]
+        },
+        {
+            question: "Which year you joined college?",
+            answers: [
+                { text: "2022", correct: false },
+                { text: "2023", correct: true },
+                { text: "2020", correct: false },
+                { text: "2024", correct: false }
+            ]
+        },
+        {
+            question: "Which course are you pursuing?",
+            answers: [
+                { text: "BSC.IT", correct: false },
+                { text: "BCA", correct: true },
+                { text: "BCOM.CA", correct: false },
+                { text: "BSC.CS", correct: false }
+            ]
+        },
+        {
+            question: "Which year you will complete your college?",
+            answers: [
+                { text: "2022", correct: false },
+                { text: "2023", correct: false },
+                { text: "2026", correct: true },
+                { text: "2024", correct: false }
+            ]
+        },
+        {
+            question: "Which Programming language is easy for beginners?",
+            answers: [
+                { text: "C", correct: true },
+                { text: "C++", correct: false },
+                { text: "Java", correct: false },
+                { text: "Python", correct: false }
+            ]
+        },
+    ]
+
+    const que = document.getElementById("question")
+    const ans = document.getElementById("ansbut")
+    const nextbut = document.getElementById("nxt")
+
+    let currentqueindex = 0;
+    let score = 0;
+
+    function start() {
+        currentqueindex = 0;
+        score = 0;
+        nextbut.innerHTML = "Next"
+        showque()
+    }
+
+    function showque() {
+        resetState()
+        let currentque = questions[currentqueindex]
+        let quenum = currentqueindex + 1;
+        que.innerHTML = `${quenum}. ${currentque.question}`
+
+        currentque.answers.forEach(answer => {
+            const button = document.createElement("button")
+            button.innerHTML = answer.text
+            button.classList.add("but")
+            ans.appendChild(button)
+            if (answer.correct) {
+                button.dataset.correct = answer.correct
+            }
+            button.addEventListener("click", selectAnswer)
+        })
+    }
+
+    function resetState() {
+        nextbut.style.display = "none";
+        while (ans.firstChild) {
+            ans.removeChild(ans.firstChild)
+        }
+    }
+
+    function selectAnswer(e) {
+        const selectbut = e.target;
+        const iscorrect = selectbut.dataset.correct === "true"
+        if (iscorrect) {
+            selectbut.classList.add("correct")
+            score++;
+        } else {
+            selectbut.classList.add("incorrect")
+        }
+        Array.from(ans.children).forEach(button => {
+            if (button.dataset.correct === "true") {
+                button.classList.add("correct")
+            }
+            button.disabled = true
+        })
+        nextbut.style.display = "block"
+    }
+
+    function showScore() {
+        resetState()
+        que.innerHTML = `You Scored ${score} out of ${questions.length}`
+        nextbut.innerHTML = "Play Again"
+        nextbut.style.display = "block"
+    }
+
+    function handleNextbutton() {
+        currentqueindex++;
+        if (currentqueindex < questions.length) {
+            showque()
+        } else {
+            showScore()
+        }
+    }
+
+    nextbut.addEventListener("click", () => {
+        if (currentqueindex < questions.length) {
+            handleNextbutton()
+        } else {
+            start()
+        }
+    })
+
+    start()
+</script>
+
+</body>
+</html>

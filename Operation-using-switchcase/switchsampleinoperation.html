@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Switch case</title>
+    </head>
+    <body>
+        <div>
+           Value1: <input type="text" id="a"><br><br>
+           value2: <input type="text" id="b"><br><br>
+           operation: <input type="text" id="opp"><br><br>  
+       <button type="submit" onclick="operation()">check</button>      
+        </div>
+            <div id="g"></div>
+
+            <script>
+            function operation(){
+            const a = Number(document.getElementById("a").value);
+            const b = Number(document.getElementById("b").value);
+            const opp = String(document.getElementById("opp").value);
+            switch(opp)
+            {
+                case "add":
+                g.innerHTML=a+b;
+                break
+                case "sub":
+                g.innerHTML=a-b;
+                break
+                case "mul":
+                g.innerHTML=a*b;
+                break
+                case "div":
+                g.innerHTML=a/b;
+                break
+                case "mod":
+                g.innerHTML=a%b;
+                break
+                default:
+                g.innerHTML="Invalid operation";
+            }
+         }
+         </script>
+    </body>
+</html>

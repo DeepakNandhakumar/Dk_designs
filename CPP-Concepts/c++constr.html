@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>C++ programming</title>
+
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 3px;
+            background-color:cyan;
+            color: black;
+            text-align: center;
+            margin: 0;
+        }
+        nav {
+            background-color: cyan;
+            text-align: center;
+            padding: 10px;
+            color: black;
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size:larger;
+        }
+        nav form {
+            display: inline-block;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+        nav input[type="search"] {
+            background-color: white;
+            border: none;
+            padding: 5px;
+        }
+        nav input[type="submit"] {
+            background-color: cyan;
+            color: black;
+            border: none;
+            padding: 5px;
+        }
+        .left-column {
+            background-color: white;
+            width: 70%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .right-column {
+            background-color:beige ;
+            width: 30%;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            width: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-grow: 1;
+        }
+        footer {
+            padding: 10px 0;
+            background-color: lightblue;
+            color: black;
+            text-align: center;
+            margin-top: auto;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .styled-table th, .styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .styled-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .styled-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>C++ PROGRAMMING</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="c++proweb.html">Home</a></li>
+          <li><a href="c++io.html">Input/Output</a></li>
+          <li><a href="c++operator.html">Operators</a></li>
+          <li><a href="c++dm.html">Decision Making</a></li>
+          <li><a href="c++constr.html">Control Structure</a></li>
+          <li><a href="c++array.html">Arrays</a></li>
+          <li><a href="c++fun.html">Functions</a></li>
+          <li><a href="c++recursion.html">Recursion</a></li>
+          <li><a href="c++string.html">Strings</a></li>
+        </ul>
+
+        <form>
+          <input type="search" name="Search" placeholder="Search" />
+          <input type="submit" value="Search" />
+        </form>
+      </nav>
+      <main>
+        <div class="left-column">
+          <h2>C++ PROGRAMMING</h2>
+        <h4>Loops</h4>
+        <p>Loops in programming are used to repeat a block of code until the specified condition is met. A loop statement allows programmers to execute a statement or group of statements multiple times without repetition of code.</p>
+        
+        <pre><code>
+        // C program to illustrate need of loops
+        #include <stdio.h>
+          
+        int main()
+        {
+            printf( "Hello World\n");
+            printf( "Hello World\n");
+            printf( "Hello World\n");
+            printf( "Hello World\n");
+            printf( "Hello World\n");
+            printf( "Hello World\n");
+            printf( "Hello World\n");
+            printf( "Hello World\n");
+            printf( "Hello World\n");
+            printf( "Hello World\n");
+              
+            return 0;
+        }
+        </code></pre>
+        
+        <p><strong>Output</strong></p>
+        <pre><code>
+        Hello World
+        Hello World
+        Hello World
+        Hello World
+        Hello World
+        Hello World
+        Hello World
+        Hello World
+        Hello World
+        Hello World
+        </code></pre>
+        
+        <p>There are mainly two types of loops in C Programming:</p>
+        
+        <h4>Entry Controlled Loops</h4>
+        <p>In entry-controlled loops, the test condition is checked before entering the main body of the loop. <em>For Loop</em> and <em>While Loop</em> are entry-controlled loops.</p>
+        
+        <h4>Exit Controlled Loops</h4>
+        <p>In exit-controlled loops, the test condition is evaluated at the end of the loop body. The loop body will execute at least once, irrespective of whether the condition is true or false. <em>Do-While Loop</em> is an exit-controlled loop.</p>
+        
+        <h4>Loop Types</h4>
+        <table class="styled-table">
+          <tr>
+            <th>Loop Type</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>for loop</td>
+            <td>First initializes, then condition check, then executes the body, and at last, the update is done.</td>
+          </tr>
+          <tr>
+            <td>while loop</td>
+            <td>First initializes, then condition checks, then executes the body, and updating can be inside the body.</td>
+          </tr>
+          <tr>
+            <td>do-while loop</td>
+            <td>First executes the body and then the condition check is done.</td>
+          </tr>
+        </table>
+        </div>
+        <div class="right-column">
+          <h2>C++ PROGRAMMING</h2>
+          <h4>TABLE OF CONTENT</h4>
+          <ol>
+            <li>Introduction</li>
+            <li>C++ Basics</li>
+            <li>Datatypes</li>
+            <li>Input/Output</li>
+            <li>Operators</li>
+            <ul>
+              <li>Arithmetic Operator</li>
+              <li>Relational Operator</li>
+              <li>Logical Operator</li>
+              <li>Bitwise Operator</li>
+              <li>Assignment Operator</li>
+              <li>Ternary or Conditional Operator</li>
+            </ul>
+            <li>Decision Making</li>
+            <ul>
+              <li>if Statement</li>
+              <li>if-else Statement</li>
+              <li>Nested if Statement</li>
+              <li>if-else-if Ladder Statement</li>
+              <li>Switch Statement</li>
+              <li>Jump Statement</li>
+              <ol>
+                <li>break</li>
+                <li>continue</li>
+                <li>goto</li>
+                <li>return</li>
+              </ol>
+            </ul>
+            <li>Control Structure</li>
+            <ul>
+              <li>for loop</li>
+              <li>while loop</li>
+              <li>do-while loop</li>
+            </ul>
+            <li>Arrays</li>
+            <li>Functions</li>
+            <li>Recursion</li>
+            <li>Strings</li>
+          </ol>
+        </div>
+      </main>
+      <footer>
+        <p>©Copyright 2050 by C++ programming. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

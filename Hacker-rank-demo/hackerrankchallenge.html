@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker Rank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 30px;
+            margin-right: 15px;
+            margin-left: 20px;
+        }
+
+        .logo span {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .separator {
+            margin: 0 10px;
+            border-left: 1px solid white;
+            height: 30px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            margin-left: 3px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .search {
+            margin-left: auto;
+            margin-right: 20px; 
+            display: flex;
+            align-items: center;
+        }
+
+        .search input[type="text"] {
+            padding: 8px;
+            border: none;
+            background-color: #000000;
+            border-radius: 4px;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px 0;
+        }
+
+        .challenges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .challenge {
+            width: 80%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .challenge .info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .challenge h3 {
+            margin-top: 0;
+            color: rgb(95, 92, 37);
+            font-size: 1.5em;
+        }
+
+        .challenge p {
+            margin-bottom: 10px;
+        }
+
+        .challenge button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .challenge button:hover {
+            background-color: #333333;
+        }
+
+        footer {
+            background-color: #171718;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        footer a {
+            color: #00d856;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="https://hrcdn.net/hackerrank/assets/brand/logo-new-white-green-square-3b99e0649e3abb8f0cd935ca44e742a9a5655f645a877b26c1951d2a3b9a9e50.svg" alt="Logo">
+        <span>Hacker Rank</span>
+    </div>
+    <div class="separator"></div>
+    <div class="menu">
+        <a href="#">Prepare</a>
+        <a href="#">Certify</a>
+        <a href="#">Compete</a>
+        <a href="#">Apply</a>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Search...">
+    </div>
+</header>
+
+<main>
+    <h2>Fundamentals of Programming</h2>
+    <hr>
+    <div class="challenges">
+        <div class="challenge">
+            <div class="info">
+                <h3>Input & Output - Say "Hello, World!"</h3>
+                <p>Success Rate: 94.84% | Max Score: 10 | Difficulty: Medium</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/say-hello-world-1-2';">Solve Challenge</button>
+        </div>
+        <div class="challenge">
+            <div class="info">
+                <h3>Input & Output - Hello World with tab</h3>
+                <p>Success Rate: 98.43% | Max Score: 10 | Difficulty: Easy</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/hello-world-with-tab';">Solve Challenge</button>
+        </div>
+        <div class="challenge">
+            <div class="info">
+                <h3>Input & Output - Hello World with a new line</h3>
+                <p>Success Rate: 99.40% | Max Score: 10 | Difficulty: Medium</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/hello-world-with-a-new-line';">Solve Challenge</button>
+        </div>
+
+        <div class="challenge">
+            <div class="info">
+                <h3>Input & Output - Student Details</h3>
+                <p>Success Rate: 87.22% | Max Score: 40 | Difficulty: Medium</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/student-details-9';">Solve Challenge</button>
+        </div>
+        <div class="challenge">
+            <div class="info">
+                <h3>Input & Output - ASCII Values - I</h3>
+                <p>Success Rate: 98.83% | Max Score: 40 | Difficulty: Medium</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/ascii-values-i';">Solve Challenge</button>
+        </div>
+        <div class="challenge">
+            <div class="info">
+                <h3>Input & Output - ASCII Values - II</h3>
+                <p>Success Rate: 99.16% | Max Score: 40 | Difficulty: Medium</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/ascii-values-ii';">Solve Challenge</button>
+        </div>
+
+        <div class="challenge">
+            <div class="info">
+                <h3>Input & Output - Round Off</h3>
+                <p>Success Rate: 97.41% | Max Score: 40 | Difficulty: Medium</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/round-off-3-1';">Solve Challenge</button>
+        </div>
+        <div class="challenge">
+            <div class="info">
+                <h3>Operators - Fencing the Ground</h3>
+                <p>Success Rate: 98.63% | Max Score: 60 | Difficulty: Medium</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/fencing-the-ground-1';">Solve Challenge</button>
+        </div>
+        <div class="challenge">
+            <div class="info">
+                <h3>Operators - The Newspaper Agency</h3>
+                <p>Success Rate: 98.56% | Max Score: 60 | Difficulty: Medium</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/the-newspaper-agency-5';">Solve Challenge</button>
+        </div>
+        <div class="challenge">
+            <div class="info">
+                <h3>Operators - Harry Potter</h3>
+                <p>Success Rate: 75.36% | Max Score: 60 | Difficulty: Medium</p>
+            </div>
+            <button onclick="window.location.href = 'https://www.hackerrank.com/contests/fundamentals-of-programming/challenges/harry-potter-5';">Solve Challenge</button>
+        </div>
+    </div>
+    
+</main>
+<hr>
+<footer>
+    <p>&copy; 2024 HackerRank. All rights reserved.</p>
+    <p>
+        <a href="#terms">Terms of Service</a> |
+        <a href="#privacy">Privacy Policy</a> |
+        <a href="#contact">Contact Us</a>
+    </p>
+</footer>
+</body>
+</html>

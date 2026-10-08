@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>C++ programming</title>
+
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 3px;
+            background-color:cyan;
+            color: black;
+            text-align: center;
+            margin: 0;
+        }
+        nav {
+            background-color: cyan;
+            text-align: center;
+            padding: 10px;
+            color: black;
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size:larger;
+        }
+        nav form {
+            display: inline-block;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+        nav input[type="search"] {
+            background-color: white;
+            border: none;
+            padding: 5px;
+        }
+        nav input[type="submit"] {
+            background-color: cyan;
+            color: black;
+            border: none;
+            padding: 5px;
+        }
+        .left-column {
+            background-color: white;
+            width: 70%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .right-column {
+            background-color:beige ;
+            width: 30%;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            width: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-grow: 1;
+        }
+        footer {
+            padding: 10px 0;
+            background-color: lightblue;
+            color: black;
+            text-align: center;
+            margin-top: auto;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>C++ PROGRAMMING</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="c++proweb.html">Home</a></li>
+          <li><a href="c++io.html">Input/Output</a></li>
+          <li><a href="c++operator.html">Operators</a></li>
+          <li><a href="c++dm.html">Decision Making</a></li>
+          <li><a href="c++constr.html">Control Structure</a></li>
+          <li><a href="c++array.html">Arrays</a></li>
+          <li><a href="c++fun.html">Functions</a></li>
+          <li><a href="c++recursion.html">Recursion</a></li>
+          <li><a href="c++string.html">Strings</a></li>
+        </ul>
+
+        <form>
+          <input type="search" name="Search" placeholder="Search" />
+          <input type="submit" value="Search" />
+        </form>
+      </nav>
+      <main>
+        <div class="left-column">
+          <h2>C++ PROGRAMMING</h2>
+        
+        <h4>Arrays</h4>
+        <p>Array in C++ is one of the most used data structures in C programming. It is a simple and fast way of storing multiple values under a single name. In this article, we will study the different aspects of array in C language such as array declaration, definition, initialization, types of arrays, array syntax, advantages and disadvantages, and many more.</p>
+        
+        <h4>What is Array in C++?</h4>
+        <p>An array in C is a fixed-size collection of similar data items stored in contiguous memory locations. It can be used to store the collection of primitive data types such as int, char, float, etc., and also derived and user-defined data types such as pointers, structures, etc.</p>
+        
+        <h4>C Array Declaration</h4>
+        <p>In C, we have to declare the array like any other variable before using it. We can declare an array by specifying its name, the type of its elements, and the size of its dimensions. When we declare an array in C, the compiler allocates the memory block of the specified size to the array name.</p>
+        
+        <p><strong>Syntax of Array Declaration</strong></p>
+        <pre><code>
+        data_type array_name [size];
+                 or
+        data_type array_name [size1] [size2]...[sizeN];
+        </code></pre>
+        <p>where N is the number of dimensions.</p>
+        
+        <p><strong>Example of Array Declaration</strong></p>
+        <pre><code>
+        // C Program to illustrate the array declaration
+        #include <stdio.h>
+         
+        int main()
+        {
+            // declaring array of integers
+            int arr_int[5];
+            // declaring array of characters
+            char arr_char[5];
+         
+            return 0;
+        }
+        </code></pre>
+        
+        <h4>C Array Initialization</h4>
+        <p>Initialization in C++ is the process to assign some initial value to the variable. When the array is declared or allocated memory, the elements of the array contain some garbage value. So, we need to initialize the array to some meaningful value. There are multiple ways in which we can initialize an array in C.</p>
+        
+        <h4>1. Array Initialization with Declaration</h4>
+        <p>In this method, we initialize the array along with its declaration. We use an initializer list to initialize multiple elements of the array. An initializer list is the list of values enclosed within braces { } separated by a comma.</p>
+        <pre><code>
+        data_type array_name [size] = {value1, value2, ... valueN};
+        </code></pre>
+        
+        <h4>2. Array Initialization with Declaration without Size</h4>
+        <p>If we initialize an array using an initializer list, we can skip declaring the size of the array as the compiler can automatically deduce the size of the array in these cases. The size of the array in these cases is equal to the number of elements present in the initializer list as the compiler can automatically deduce the size of the array.</p>
+        <pre><code>
+        data_type array_name[] = {1,2,3,4,5};
+        </code></pre>
+        <p>The size of the above arrays is 5 which is automatically deduced by the compiler.</p>
+        
+        <h4>3. Array Initialization after Declaration (Using Loops)</h4>
+        <p>We initialize the array after the declaration by assigning the initial value to each element individually. We can use for loop, while loop, or do-while loop to assign the value to each element of the array.</p>
+        <pre><code>
+        for (int i = 0; i < N; i++) {
+            array_name[i] = valuei;
+        }
+        </code></pre>
+        
+        <p><strong>Example of Array Initialization in C++</strong></p>
+        <pre><code>
+        // C Program to demonstrate array initialization
+        #include <stdio.h>
+         
+        int main()
+        {
+            // array initialization using initializer list
+            int arr[5] = { 10, 20, 30, 40, 50 };
+         
+            // array initialization using initializer list without
+            // specifying size
+            int arr1[] = { 1, 2, 3, 4, 5 };
+         
+            // array initialization using for loop
+            float arr2[5];
+            for (int i = 0; i < 5; i++) {
+                arr2[i] = (float)i * 2.1;
+            }
+            return 0;
+        }
+        </code></pre>
+        
+        <h4>Types of Array in C++</h4>
+        <p>There are two types of arrays based on the number of dimensions it has. They are as follows:</p>
+        <ul>
+          <li>One Dimensional Arrays (1D Array)</li>
+          <li>Multidimensional Arrays</li>
+        </ul>
+        
+        <h4>1. One Dimensional Array in C++</h4>
+        <p>The One-dimensional arrays, also known as 1-D arrays in C, are those arrays that have only one dimension.</p>
+        <p><strong>Syntax of 1D Array in C</strong></p>
+        <pre><code>
+        array_name [size];
+        </code></pre>
+        
+        <p><strong>Example of 1D Array in C++</strong></p>
+        <pre><code>
+        // C Program to illustrate the use of 1D array
+        #include <stdio.h>
+         
+        int main()
+        {
+            // 1d array declaration
+            int arr[5];
+         
+            // 1d array initialization using for loop
+            for (int i = 0; i < 5; i++) {
+                arr[i] = i * i - 2 * i + 1;
+            }
+         
+            printf("Elements of Array: ");
+            // printing 1d array by traversing using for loop
+            for (int i = 0; i < 5; i++) {
+                printf("%d ", arr[i]);
+            }
+         
+            return 0;
+        }
+        </code></pre>
+        <p><strong>Output</strong></p>
+        <pre><code>
+        Elements of Array: 1 0 1 4 9 
+        </code></pre>
+        
+        <h4>Array of Characters (Strings)</h4>
+        <p>In C, we store the words, i.e., a sequence of characters in the form of an array of characters terminated by a NULL character. These are called strings in C language.</p>
+        <pre><code>
+        // C Program to illustrate strings
+        #include <stdio.h>
+         
+        int main()
+        {
+            // creating array of character
+            char arr[6] = { 'G', 'e', 'e', 'k', 's', '\0' };
+         
+            // printing string
+            int i = 0;
+            while (arr[i]) {
+                printf("%c", arr[i++]);
+            }
+            return 0;
+        }
+        </code></pre>
+        <p><strong>Output</strong></p>
+        <pre><code>
+        Geeks
+        </code></pre>
+        <p>To know more about strings, refer to this article – Strings in C</p>
+        
+        <h4>2. Multidimensional Array in C++</h4>
+        <p>Multi-dimensional Arrays in C are those arrays that have more than one dimension. Some of the popular multidimensional arrays are 2D arrays and 3D arrays. We can declare arrays with more dimensions than 3d arrays but they are avoided as they get very complex and occupy a large amount of space.</p>
+        
+        <h4>A. Two-Dimensional Array in C++</h4>
+        <p>A Two-Dimensional array or 2D array in C is an array that has exactly two dimensions. They can be visualized in the form of rows and columns organized in a two-dimensional plane.</p>
+        <p><strong>Syntax of 2D Array in C</strong></p>
+        <pre><code>
+        array_name[size1][size2];
+        </code></pre>
+        <p>Here,</p>
+        <ul>
+          <li>size1: Size of the first dimension.</li>
+          <li>size2: Size of the second dimension.</li>
+        </ul>
+        
+        <p><strong>Example of 2D Array in C++</strong></p>
+        <pre><code>
+        // C Program to illustrate 2d array
+        #include <stdio.h>
+         
+        int main()
+        {
+            // declaring and initializing 2d array
+            int arr[2][3] = { 10, 20, 30, 40, 50, 60 };
+         
+            printf("2D Array:\n");
+            // printing 2d array
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 3; j++) {
+                    printf("%d ",arr[i][j]);
+                }
+                printf("\n");
+            }
+         
+            return 0;
+        }
+        </code></pre>
+        <p><strong>Output</strong></p>
+        <pre><code>
+        2D Array:
+        10 20 30 
+        40 50 60 
+        </code></pre>
+        </div>
+        <div class="right-column">
+          <h2>C++ PROGRAMMING</h2>
+          <h4>TABLE OF CONTENT</h4>
+          <ol>
+            <li>Introduction</li>
+            <li>C++ Basics</li>
+            <li>Datatypes</li>
+            <li>Input/Output</li>
+            <li>Operators</li>
+            <ul>
+              <li>Arithmetic Operator</li>
+              <li>Relational Operator</li>
+              <li>Logical Operator</li>
+              <li>Bitwise Operator</li>
+              <li>Assignment Operator</li>
+              <li>Ternary or Conditional Operator</li>
+            </ul>
+            <li>Decision Making</li>
+            <ul>
+              <li>if Statement</li>
+              <li>if-else Statement</li>
+              <li>Nested if Statement</li>
+              <li>if-else-if Ladder Statement</li>
+              <li>Switch Statement</li>
+              <li>Jump Statement</li>
+              <ol>
+                <li>break</li>
+                <li>continue</li>
+                <li>goto</li>
+                <li>return</li>
+              </ol>
+            </ul>
+            <li>Control Structure</li>
+            <ul>
+              <li>for loop</li>
+              <li>while loop</li>
+              <li>do-while loop</li>
+            </ul>
+            <li>Arrays</li>
+            <li>Functions</li>
+            <li>Recursion</li>
+            <li>Strings</li>
+          </ol>
+        </div>
+      </main>
+      <footer>
+        <p>©Copyright 2050 by C++ programming. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
